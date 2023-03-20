@@ -1,12 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.styles.jsx';
+import * as S from "./App.styles";
+import { FC } from "react";
+import Main from './pages/main';
 
-function App() {
+const App:FC = ():JSX.Element => {
+
   return (
-    <div className="App">
-      
-    </div>
+    <S.Container>
+      <div className='container__content'>
+        <Main />
+      </div>
+    </S.Container>
   );
 }
 
