@@ -5,6 +5,13 @@ export const Container = styled.div`
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	gap: 30px;
+	gap: 15px;
 	min-height: calc(100vh - 200px);
+	.container__content{
+		display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+	 gap: 30px;
+	}
 `;

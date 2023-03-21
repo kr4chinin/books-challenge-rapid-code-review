@@ -28,4 +28,18 @@ export const Container = styled.div`
 		overflow: hidden;
 		white-space: pre-wrap;
 	}
+	.upperName{
+		font-weight: 700;
+	}
+	.nameOfcompany{
+		overflow: hidden;
+      text-overflow: ellipsis;
+      display: -moz-box;
+      -moz-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      line-clamp: 3;
+      box-orient: vertical;
+	}
 `;

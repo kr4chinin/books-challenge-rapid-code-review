@@ -18,14 +18,14 @@ const Items = ({ state }: any) => {
 
 	return (
 		<S.Container>
-		
-			{stateArray
+		<div className='container__content'>{stateArray
 				? stateArray
 						.slice(0, visible)
 						.map((element: any) => <Item key={element.id} state={element} />)
 				: null}
-				
-				<Button onClick={showMoreItems} buttonName={'Show more'}/>
+				</div>
+			
+			{stateArray ? (<Button onClick={showMoreItems} buttonName={'Show more'}/>):(null)}	
 		</S.Container>
 	);
 };

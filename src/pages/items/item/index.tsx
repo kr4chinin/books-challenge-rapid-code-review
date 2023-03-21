@@ -8,10 +8,10 @@ export const Item = ({ state }: any) => {
 
 	return (
 		<S.Container>
-			<img src={label} alt="label" />
-			<span>Наименование: {name?.length ? name : "Незветсно"}</span>
-			<span>Категория: {category?.length ? category : "Неизвестно"}</span>
-			<span>Автор: {author?.length ? author : "Неизвестно"}</span>
+			<img src={label} alt="label of book" />
+			<span className="nameOfcompany"><span className="upperName">Наименование:</span> {name?.length ? name : "Незветсно"}</span>
+			<span className="categoryOfcompany"><span className="upperName">Категория:</span> {category?.length ? category : "Неизвестно"}</span>
+			<span className="authorOfcompany"><span className="upperName">Автор:</span> {author?.length ? author : "Неизвестно"}</span>
 		</S.Container>
 	);
 };
