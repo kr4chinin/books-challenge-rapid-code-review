@@ -7,9 +7,7 @@ const App:FC = ():JSX.Element => {
 
   return (
     <S.Container>
-      <div className='container__content'>
         <Main />
-      </div>
     </S.Container>
   );
 }

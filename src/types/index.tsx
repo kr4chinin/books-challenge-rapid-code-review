@@ -17,8 +17,7 @@ export interface IDataBooks {
 	items: IDataBook[];
 }
 
-
 export interface IPropsButton {
-	onClick:()=>void,
+	buttonName:localString,
+	onClick: () => void;
 }
-
