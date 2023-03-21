@@ -19,5 +19,6 @@ export interface IDataBooks {
 
 
 export interface IPropsButton {
-	onClick:()=>void
+	onClick:()=>void,
 }
+
