@@ -14,5 +14,18 @@ export const ContainerMain = styled.div`
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		flex-direction: column;
+	}
+	.header__mainfield {
+		display: flex;
+		max-width: 600px;
+		width: 100%;
+	}
+	.buttonsGroupSorting {
+		margin-top:40px;
+		max-width: 605px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between
 	}
 `;

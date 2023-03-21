@@ -5,13 +5,9 @@ import { IDataBooks } from "types";
 
 function* sagaGetBooks(action:any) {
 	try {
-		console.log('action in saga', action.payload)
-		console.log('common baby, let s start a saga')
 		yield put(setLoading());
 		const dataBooks:IDataBooks = yield call(getBooksApi, action.payload);
-		console.log('hm, can i get a data from books shop?', dataBooks)
 		yield put(setBooks(dataBooks));
-		console.log('i think a data already in state')
 		yield put(unSetLoading());
 	} catch {
 		yield put(setError("Произошла ошибка загрузки данных"));

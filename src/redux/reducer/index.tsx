@@ -18,7 +18,6 @@ const booksSlice = createSlice({
          state.loading = true
       },
 		setBooks: (state, action) => {
-			console.log('action in action', action)
 			state.books = action.payload;
 		},
 		setError: (state, action) => {
