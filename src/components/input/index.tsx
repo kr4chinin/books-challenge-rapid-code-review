@@ -1,12 +1,11 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { useDispatch } from "react-redux";
 import * as S from "./index.styles";
 import { getBooks } from "redux/reducer";
 import React from "react";
 
-const Input: FC<any> = ({value,  setValue}): JSX.Element => {
+const Input: FC<any> = ({ value, setValue }): JSX.Element => {
 	const dispatch = useDispatch();
-	
 
 	const handleValue = (e: any) => {
 		setValue(e.target.value);
@@ -20,10 +19,11 @@ const Input: FC<any> = ({value,  setValue}): JSX.Element => {
 
 	return (
 		<S.ContainerInput
-				type="text"
-				placeholder="Введите название книги"
-				onChange={handleValue}
-				onKeyPress={handleChange} />
+			type="text"
+			placeholder="Введите название книги"
+			onChange={handleValue}
+			onKeyPress={handleChange}
+		/>
 	);
 };
 

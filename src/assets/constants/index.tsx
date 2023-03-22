@@ -1,23 +1,23 @@
 export const kindSortButtons = [
 	{
-		name: "all",
+		name: "All",
 	},
 	{
-		name: "art",
+		name: "Art",
 	},
 	{
-		name: "biography",
+		name: "Biography",
 	},
 	{
-		name: "computers",
+		name: "Computers",
 	},
 	{
-		name: "history",
+		name: "History",
 	},
 	{
-		name: "medical",
+		name: "Medical",
 	},
 	{
-		name: "poetry",
+		name: "Poetry",
 	},
 ];

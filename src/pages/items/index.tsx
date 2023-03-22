@@ -2,14 +2,14 @@ import * as S from "./index.styles";
 import Item from "./item";
 import { useState, useEffect } from "react";
 import { Button } from "components/button";
-import { RotatingLines } from "react-loader-spinner";
+import { MagnifyingGlass } from "react-loader-spinner";
 import { useSelector } from "react-redux";
 
-const Items = ({ state }: any) => {
+const Items = ({ state, sortingField }: any) => {
 	const [stateArray, setStateArray] = useState([]);
+	const [filteredArray, setFilteredArray] = useState([]);
 	const [visible, setVisible] = useState(30);
 	const isLoading = useSelector((state: any) => state.books.loading);
-	console.log("isLoad", isLoading);
 
 	const showMoreItems = () => {
 		setVisible((prevValue) => prevValue + 30);
@@ -17,27 +17,49 @@ const Items = ({ state }: any) => {
 
 	useEffect(() => {
 		setStateArray(state);
+		setFilteredArray(state)
 	}, [state]);
+
+	useEffect(() => {
+		if(sortingField === 'All'){
+			setFilteredArray(state)
+		} else setFilteredArray(sortingFunction());
+	}, [sortingField]);
+
+	const sortingFunction = () => {
+		return stateArray.filter((element: any) => {
+			const sortingElement = element.volumeInfo.categories?.[0];
+			const isHasMatches = sortingElement?.includes(sortingField);
+			return isHasMatches;
+		});
+	};
 
 	return (
 		<S.Container>
 			{isLoading ? (
-				<RotatingLines
-					strokeColor="#f3e7e7"
-					strokeWidth="5"
-					animationDuration="0.55"
-					width="100"
-					visible={true}
-				/>
-			) : !!stateArray ? (
+				<MagnifyingGlass
+				visible={true}
+				height="110"
+				width="110"
+				ariaLabel="MagnifyingGlass-loading"
+				wrapperStyle={{ marginTop: "250px" }}
+				wrapperClass="MagnifyingGlass-wrapper"
+				glassColor = '#c0efff'
+				color = '#bb7d81'
+			 />
+			) : !!filteredArray ? (
 				<>
-					<span>Found {stateArray.length} books</span>
+					{filteredArray.length > 0 ? (
+						<span>Found {filteredArray.length} books</span>
+					) : null}
 					<div className="container__content">
-						{stateArray.slice(0, visible).map((element: any) => (
+						{filteredArray.slice(0, visible).map((element: any) => (
 							<Item key={element.id} state={element} />
 						))}
 					</div>
-					<Button onClick={showMoreItems} buttonName={"Show more"} />
+					{filteredArray.length > 30 && stateArray.length > visible ? (
+						<Button onClick={showMoreItems} buttonName={"Show more"} />
+					) : null}
 				</>
 			) : null}
 		</S.Container>

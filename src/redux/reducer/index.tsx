@@ -23,9 +23,12 @@ const booksSlice = createSlice({
 		setError: (state, action) => {
 			state.error = action.payload;
 		},
+		getSortingBooks: (state) => {
+			state.loading = false
+		}
 	},
 });
 
 export const booksReducer = booksSlice.reducer;
-export const { setLoading, unSetLoading,getBooks, setBooks, setError } =
+export const { setLoading, unSetLoading,getBooks, setBooks, setError, getSortingBooks } =
 	booksSlice.actions;
