@@ -3,12 +3,14 @@ import Item from "./item";
 import { useState, useEffect } from "react";
 import { Button } from "components/button";
 import { MagnifyingGlass } from "react-loader-spinner";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getIdBook } from "redux/reducer";
 
 const Items = ({ state, sortingField }: any) => {
 	const [stateArray, setStateArray] = useState([]);
 	const [filteredArray, setFilteredArray] = useState([]);
 	const [visible, setVisible] = useState(30);
+	const dispatch = useDispatch();
 	const isLoading = useSelector((state: any) => state.books.loading);
 
 	const showMoreItems = () => {
@@ -34,6 +36,11 @@ const Items = ({ state, sortingField }: any) => {
 		});
 	};
 
+	const handleIdBook = (id:any) => {
+		dispatch(getIdBook(id))
+		console.log('start')
+	}
+
 	return (
 		<S.Container>
 			{isLoading ? (
@@ -54,7 +61,7 @@ const Items = ({ state, sortingField }: any) => {
 					) : null}
 					<div className="container__content">
 						{filteredArray.slice(0, visible).map((element: any) => (
-							<Item key={element.id} state={element} />
+							<Item key={element.id} state={element} onClick={()=>handleIdBook(element.id)}/>
 						))}
 					</div>
 					{filteredArray.length > 30 && stateArray.length > visible ? (

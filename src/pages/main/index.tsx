@@ -12,15 +12,15 @@ const Main: FC = (): JSX.Element => {
 	const state = useSelector((state: any) => state.books.books.data?.items);
 	const dispatch = useDispatch();
 	const [value, setValue] = useState();
-	const [sortingField, setSortingField] = useState('')
+	const [sortingField, setSortingField] = useState("");
 
 	const triggerLoadData = () => {
 		dispatch(getBooks(value));
 	};
 
-const triggerSortByKind = (name:any) => {
-setSortingField(name)
-}
+	const triggerSortByKind = (name: any) => {
+		setSortingField(name);
+	};
 
 	return (
 		<S.ContainerMain>
@@ -30,11 +30,17 @@ setSortingField(name)
 					<Button onClick={triggerLoadData} buttonName={"Search"} />
 				</div>
 				<div className="buttonsGroupSorting">
-				{kindSortButtons.map((item, index)=><Button key={index} onClick={()=>triggerSortByKind(item.name)} buttonName={item.name} />)}
+					{kindSortButtons.map((item, index) => (
+						<Button
+							key={index}
+							onClick={() => triggerSortByKind(item.name)}
+							buttonName={item.name}
+						/>
+					))}
 				</div>
-				<Select value={value}/>
+				<Select value={value} />
 			</div>
-			<Items state={state} sortingField={sortingField}/>
+			<Items state={state} sortingField={sortingField} />
 		</S.ContainerMain>
 	);
 };

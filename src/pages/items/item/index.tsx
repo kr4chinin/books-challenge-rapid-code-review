@@ -1,13 +1,13 @@
 import * as S from "./index.styles";
 
-export const Item = ({ state }: any) => {
+export const Item = ({ state, onClick }: any) => {
 	const label = state.volumeInfo.imageLinks?.smallThumbnail;
 	const name = state.volumeInfo.title;
 	const category = state.volumeInfo.categories?.[0];
 	const authors = state.volumeInfo.authors;
 
 	return (
-		<S.Container>
+		<S.Container onClick={onClick}>
 			<img src={label} alt="label of book" />
 			<span className="nameOfcompany"><span className="upperName">Наименование:</span> {name?.length ? name : "Незветсно"}</span>
 			<span className="categoryOfcompany"><span className="upperName">Категория:</span> {category?.length ? category : "Неизвестно"}</span>
