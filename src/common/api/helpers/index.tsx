@@ -1,20 +1,18 @@
 import axios from "axios";
+import { localString } from "types";
 import { basicUrl } from "../constant";
 
-export const getBooksApi = (action: any) => {
-	const response = axios.get(`${basicUrl}?q=${action}&maxResults=40`);
+export const getBooksApi = (queryParams:localString) => {
+	const response = axios.get(`${basicUrl}?=${queryParams}&maxResults=40`);
 	return response;
 };
 
-export const getSortingBooksApi = (action: any) => {
-	const response = axios.get(`${basicUrl}?q=${action}&maxResults=40`);
+export const getSortingBooksApi = (queryParams:localString) => {
+	const response = axios.get(`${basicUrl}?q=${queryParams}&maxResults=40`);
 	return response;
 };
 
-export const getBookByIDApi = (action: any) => {
-	console.log('response in last function')
-	const response = axios.get(`${basicUrl}/${action}`);
-	console.log('response in last function', response)
+export const getBookByIDApi = (queryParams:localString) => {
+	const response = axios.get(`${basicUrl}/${queryParams}`);
 	return response;
 };
-

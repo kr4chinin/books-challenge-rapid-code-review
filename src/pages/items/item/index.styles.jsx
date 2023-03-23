@@ -9,13 +9,13 @@ export const Container = styled.div`
 	height: 350px;
 	justify-content: space-evenly;
 	text-align: center;
-   border-radius: 15px;
-   border: 1px solid transparent;
+	border-radius: 15px;
+	border: 1px solid transparent;
 	&:hover {
 		cursor: pointer;
 		background-color: #cdcdcd;
-      border: 1px solid #000;
-      transition: all 700ms;
+		border: 1px solid #000;
+		transition: all 700ms;
 	}
 	img {
 		width: 120px;
@@ -28,18 +28,18 @@ export const Container = styled.div`
 		overflow: hidden;
 		white-space: pre-wrap;
 	}
-	.upperName{
+	.upperName {
 		font-weight: 700;
 	}
-	.nameOfcompany{
+	.nameOfcompany {
 		overflow: hidden;
-      text-overflow: ellipsis;
-      display: -moz-box;
-      -moz-box-orient: vertical;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      line-clamp: 3;
-      box-orient: vertical;
+		text-overflow: ellipsis;
+		display: -moz-box;
+		-moz-box-orient: vertical;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		line-clamp: 3;
+		box-orient: vertical;
 	}
 `;

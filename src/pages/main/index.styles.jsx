@@ -22,10 +22,10 @@ export const ContainerMain = styled.div`
 		width: 100%;
 	}
 	.buttonsGroupSorting {
-		margin-top:40px;
+		margin-top: 40px;
 		max-width: 605px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
 	}
 `;

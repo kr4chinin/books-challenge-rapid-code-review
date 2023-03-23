@@ -1,12 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const booksSlice = createSlice({
-	name: " books",
+	name: "books",
 	initialState: {
 		books: [],
+		book: {},
 		loading: false,
 		error: "",
-		id:0,
+		id: 0,
+		searchParams: "",
+		queryParams: "",
 	},
 	reducers: {
 		setLoading: (state) => {
@@ -15,24 +18,37 @@ const booksSlice = createSlice({
 		unSetLoading: (state) => {
 			state.loading = false;
 		},
-      getBooks:(state) => {
-         state.loading = true
-      },
+		getBooks: (state, action) => {
+			state.loading = true;
+			state.searchParams = action.payload;
+		},
 		setBooks: (state, action) => {
 			state.books = action.payload;
 		},
 		setError: (state, action) => {
 			state.error = action.payload;
 		},
-		getSortingBooks: (state) => {
-			state.loading = false
+		getSortingBooks: (state, action) => {
+			state.loading = false;
+			state.queryParams = action.payload;
 		},
-		getIdBook: (state, action) =>{
-			state.id = action.payload
-		}
+		getIdBook: (state, action) => {
+			state.id = action.payload;
+		},
+		setBook: (state, action) => {
+			state.book = action.payload;
+		},
 	},
 });
 
 export const booksReducer = booksSlice.reducer;
-export const { setLoading, unSetLoading,getBooks, setBooks, setError, getSortingBooks, getIdBook } =
-	booksSlice.actions;
+export const {
+	setLoading,
+	unSetLoading,
+	getBooks,
+	setBooks,
+	setBook,
+	setError,
+	getSortingBooks,
+	getIdBook,
+} = booksSlice.actions;

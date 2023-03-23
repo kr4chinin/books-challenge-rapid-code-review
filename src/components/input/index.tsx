@@ -3,11 +3,12 @@ import { useDispatch } from "react-redux";
 import * as S from "./index.styles";
 import { getBooks } from "redux/reducer";
 import React from "react";
+import { IPropsInput } from "types";
 
-const Input: FC<any> = ({ value, setValue }): JSX.Element => {
+const Input: FC<IPropsInput> = ({ value, setValue }): JSX.Element => {
 	const dispatch = useDispatch();
 
-	const handleValue = (e: any) => {
+	const handleValue = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setValue(e.target.value);
 	};
 

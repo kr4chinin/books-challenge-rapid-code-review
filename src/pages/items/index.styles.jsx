@@ -8,10 +8,22 @@ export const Container = styled.div`
 	gap: 15px;
 	min-height: calc(100vh - 200px);
 	.container__content {
+		text-decoration: none;
+		color: #000;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: 30px;
+		
+		a {
+			text-decoration: none;
+			color: #000;
+			max-width: 200px;
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+		}
 	}
+
 `;

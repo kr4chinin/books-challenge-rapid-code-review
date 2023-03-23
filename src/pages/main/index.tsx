@@ -6,19 +6,22 @@ import Items from "pages/items";
 import { FC, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getBooks } from "redux/reducer";
+import { IStateBooksProperties, localString } from "types";
 import * as S from "./index.styles";
 
-const Main: FC = (): JSX.Element => {
-	const state = useSelector((state: any) => state.books.books.data?.items);
+const Main:FC = ():JSX.Element => {
+	const state = useSelector(
+		(state: IStateBooksProperties) => state.books.books.data?.items,
+	);
 	const dispatch = useDispatch();
-	const [value, setValue] = useState();
-	const [sortingField, setSortingField] = useState("");
+	const [value, setValue] = useState<localString>("");
+	const [sortingField, setSortingField] = useState<localString>("");
 
-	const triggerLoadData = () => {
+	const triggerLoadData = (): void => {
 		dispatch(getBooks(value));
 	};
 
-	const triggerSortByKind = (name: any) => {
+	const triggerSortByKind = (name:localString): void => {
 		setSortingField(name);
 	};
 

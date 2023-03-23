@@ -1,13 +1,25 @@
-import { getBookByIDApi, getBooksApi, getSortingBooksApi } from "common/api/helpers";
+import {
+	getBookByIDApi,
+	getBooksApi,
+	getSortingBooksApi,
+} from "common/api/helpers";
 import { put, call, all, takeEvery } from "redux-saga/effects";
-import { getBooks, getIdBook, getSortingBooks, setBooks, setError, setLoading, unSetLoading } from "redux/reducer";
-import { IDataBooks } from "types";
+import {
+	getBooks,
+	getIdBook,
+	getSortingBooks,
+	setBook,
+	setBooks,
+	setError,
+	setLoading,
+	unSetLoading,
+} from "redux/reducer";
+import { IDataBooks, IPropsAction } from "types";
 
-function* sagaGetBooks(action:any) {
+function* sagaGetBooks(action: IPropsAction) {
 	try {
 		yield put(setLoading());
-		const dataBooks:IDataBooks = yield call(getBooksApi, action.payload);
-		console.log('dataBooks', dataBooks)
+		const dataBooks: IDataBooks = yield call(getBooksApi, action.payload);
 		yield put(setBooks(dataBooks));
 		yield put(unSetLoading());
 	} catch {
@@ -20,11 +32,13 @@ function* sagaBooksWatcher() {
 	yield takeEvery(getBooks, sagaGetBooks);
 }
 
-function* sagaGetSortingBooks(action:any) {
+function* sagaGetSortingBooks(action: IPropsAction) {
 	try {
-		
 		yield put(setLoading());
-		const dataBooks:IDataBooks = yield call(getSortingBooksApi,  action.payload);
+		const dataBooks: IDataBooks = yield call(
+			getSortingBooksApi,
+			action.payload,
+		);
 		yield put(setBooks(dataBooks));
 		yield put(unSetLoading());
 	} catch {
@@ -37,13 +51,11 @@ function* sagaSortingBooksWatcher() {
 	yield takeEvery(getSortingBooks, sagaGetSortingBooks);
 }
 
-
-function* sagaGetBookByID(action:any) {
+function* sagaGetBookByID(action: IPropsAction) {
 	try {
-		console.log('start a saga')
 		yield put(setLoading());
-		const dataBooks:IDataBooks = yield call(getBookByIDApi,  action.payload);
-		yield put(setBooks(dataBooks));
+		const dataBooks: IDataBooks = yield call(getBookByIDApi, action.payload);
+		yield put(setBook(dataBooks));
 		yield put(unSetLoading());
 	} catch {
 		yield put(setError("Произошла ошибка загрузки данных"));
@@ -56,5 +68,9 @@ function* sagaBookByIDWatcher() {
 }
 
 export default function* rootSaga() {
-	yield all([sagaBooksWatcher(), sagaSortingBooksWatcher(), sagaBookByIDWatcher()]);
+	yield all([
+		sagaBooksWatcher(),
+		sagaSortingBooksWatcher(),
+		sagaBookByIDWatcher(),
+	]);
 }

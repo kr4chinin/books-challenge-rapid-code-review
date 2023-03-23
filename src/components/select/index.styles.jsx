@@ -6,9 +6,8 @@ export const ContainerSelect = styled.select`
 	height: 30px;
 	border-radius: 5px;
 	margin-top: 20px;
-   font-family: "Edu NSW ACT Foundation", cursive;
-		font-weight: 700;
- 
+	font-family: "Edu NSW ACT Foundation", cursive;
+	font-weight: 700;
 	&:hover {
 		cursor: pointer;
 	}
