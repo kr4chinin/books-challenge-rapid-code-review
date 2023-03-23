@@ -16,9 +16,9 @@ import {
 } from "types";
 
 const Items: FC<IStateItemsProps> = ({ state, sortingField }): JSX.Element => {
-	const [ stateArray, setStateArray ] = useState<IPropsItems[]>([]);
-	const [ filteredArray, setFilteredArray ] = useState<IPropsItems[]>([]);
-	const [ visible, setVisible ] = useState<localNumber>(30);
+	const [stateArray, setStateArray] = useState<IPropsItems[]>([]);
+	const [filteredArray, setFilteredArray] = useState<IPropsItems[]>([]);
+	const [visible, setVisible] = useState<localNumber>(30);
 	const dispatch = useDispatch();
 	const isLoading = useSelector((state: IState) => state.books.loading);
 	const id = useSelector((state: IState) => state.books.id);

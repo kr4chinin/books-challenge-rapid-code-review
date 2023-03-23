@@ -8,8 +8,8 @@ export const Button: FC<IPropsButton> = ({
 	className,
 }): JSX.Element => {
 	return (
-		<S.ContainerButton onClick={ onClick } className={ className }>
-			<span>{ buttonName }</span>
+		<S.ContainerButton onClick={onClick} className={className}>
+			<span>{buttonName}</span>
 		</S.ContainerButton>
 	);
 };

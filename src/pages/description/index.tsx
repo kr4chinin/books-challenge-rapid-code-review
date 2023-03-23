@@ -1,28 +1,28 @@
 import * as S from "./index.styles";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Button } from "components/button";
 import { Link } from "react-router-dom";
 import { MagnifyingGlass } from "react-loader-spinner";
-import { ICurrentState, IState, localNumber } from "types";
-
+import { ICurrentState, IState } from "types";
 
 const DescriptionPage = () => {
 	const bookImage = useSelector(
-		(state:ICurrentState) => state.books.book.data?.volumeInfo.imageLinks.smallThumbnail,
+		(state: ICurrentState) =>
+			state.books.book.data?.volumeInfo.imageLinks.smallThumbnail,
 	);
 	const bookName = useSelector(
-		(state:ICurrentState) => state.books.book.data?.volumeInfo.title,
+		(state: ICurrentState) => state.books.book.data?.volumeInfo.title,
 	);
 	const bookCategories = useSelector(
-		(state:ICurrentState) => state.books.book.data?.volumeInfo.categories,
+		(state: ICurrentState) => state.books.book.data?.volumeInfo.categories,
 	);
 	const bookAuthors = useSelector(
-		(state:ICurrentState) => state.books.book.data?.volumeInfo.authors,
+		(state: ICurrentState) => state.books.book.data?.volumeInfo.authors,
 	);
 	const bookDescription = useSelector(
-		(state:ICurrentState) => state.books.book.data?.volumeInfo.description,
+		(state: ICurrentState) => state.books.book.data?.volumeInfo.description,
 	);
-	const isLoading = useSelector((state:IState) => state.books?.loading);
+	const isLoading = useSelector((state: IState) => state.books?.loading);
 
 	return (
 		<S.Container>
@@ -40,7 +40,6 @@ const DescriptionPage = () => {
 			) : (
 				<>
 					<Link to="/*">
-						
 						<Button buttonName={"Back"} className={"backbutton"} />
 					</Link>
 					<div className="container__label">
@@ -48,16 +47,20 @@ const DescriptionPage = () => {
 					</div>
 					<div className="container__description">
 						<p className="name">
-							<span className="nameSpace">Name:</span> <span className="namingBook">{bookName}</span>
+							<span className="nameSpace">Name:</span>{" "}
+							<span className="namingBook">{bookName}</span>
 						</p>
 						<p className="categories">
-						<span className="nameSpace">Categories: </span><span className="namingBook">{bookCategories}</span>
+							<span className="nameSpace">Categories: </span>
+							<span className="namingBook">{bookCategories}</span>
 						</p>
 						<p className="authors">
-						<span className="nameSpace">Authors:</span> <span className="namingBook">{bookAuthors}</span>
+							<span className="nameSpace">Authors:</span>{" "}
+							<span className="namingBook">{bookAuthors}</span>
 						</p>
 						<p className="description">
-						<span className="nameSpace">Description:</span> <span className="namingBook">{bookDescription}</span>
+							<span className="nameSpace">Description:</span>{" "}
+							<span className="namingBook">{bookDescription}</span>
 						</p>
 					</div>
 				</>

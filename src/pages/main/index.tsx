@@ -9,7 +9,7 @@ import { getBooks } from "redux/reducer";
 import { IStateBooksProperties, localString } from "types";
 import * as S from "./index.styles";
 
-const Main:FC = ():JSX.Element => {
+const Main: FC = (): JSX.Element => {
 	const state = useSelector(
 		(state: IStateBooksProperties) => state.books.books.data?.items,
 	);
@@ -21,7 +21,7 @@ const Main:FC = ():JSX.Element => {
 		dispatch(getBooks(value));
 	};
 
-	const triggerSortByKind = (name:localString): void => {
+	const triggerSortByKind = (name: localString): void => {
 		setSortingField(name);
 	};
 

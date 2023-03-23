@@ -15,7 +15,6 @@ export const Container = styled.div`
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: 30px;
-		
 		a {
 			text-decoration: none;
 			color: #000;
@@ -25,5 +24,4 @@ export const Container = styled.div`
 			flex-wrap: wrap;
 		}
 	}
-
 `;

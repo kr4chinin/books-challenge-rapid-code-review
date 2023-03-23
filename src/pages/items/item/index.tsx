@@ -2,7 +2,7 @@ import * as S from "./index.styles";
 import { FC } from "react";
 import { IPropsItem } from "types";
 
-export const Item: FC<IPropsItem> = ({ state, onClick }):JSX.Element => {
+export const Item: FC<IPropsItem> = ({ state, onClick }): JSX.Element => {
 	const label = state.volumeInfo.imageLinks?.smallThumbnail;
 	const name = state.volumeInfo.title;
 	const category = state.volumeInfo.categories?.[0];
