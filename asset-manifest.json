@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/booksChalenge/static/css/main.e6c13ad2.css",
-    "main.js": "/booksChalenge/static/js/main.67185504.js",
+    "main.css": "/booksChalenge/static/css/main.55bdcf3c.css",
+    "main.js": "/booksChalenge/static/js/main.e98edd04.js",
     "index.html": "/booksChalenge/index.html",
-    "main.e6c13ad2.css.map": "/booksChalenge/static/css/main.e6c13ad2.css.map",
-    "main.67185504.js.map": "/booksChalenge/static/js/main.67185504.js.map"
+    "main.55bdcf3c.css.map": "/booksChalenge/static/css/main.55bdcf3c.css.map",
+    "main.e98edd04.js.map": "/booksChalenge/static/js/main.e98edd04.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.67185504.js"
+    "static/css/main.55bdcf3c.css",
+    "static/js/main.e98edd04.js"
   ]
 }
