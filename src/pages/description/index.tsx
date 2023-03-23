@@ -1,9 +1,10 @@
 import * as S from "./index.styles";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Button } from "components/button";
 import { Link } from "react-router-dom";
 import { MagnifyingGlass } from "react-loader-spinner";
-import { ICurrentState, IState } from "types";
+import { ICurrentState, IState, localNumber } from "types";
+
 
 const DescriptionPage = () => {
 	const bookImage = useSelector(
@@ -39,6 +40,7 @@ const DescriptionPage = () => {
 			) : (
 				<>
 					<Link to="/*">
+						
 						<Button buttonName={"Back"} className={"backbutton"} />
 					</Link>
 					<div className="container__label">
@@ -46,16 +48,16 @@ const DescriptionPage = () => {
 					</div>
 					<div className="container__description">
 						<p className="name">
-							Name: <span className="namingBook">{bookName}</span>
+							<span className="nameSpace">Name:</span> <span className="namingBook">{bookName}</span>
 						</p>
 						<p className="categories">
-							Categories: <span className="namingBook">{bookCategories}</span>
+						<span className="nameSpace">Categories: </span><span className="namingBook">{bookCategories}</span>
 						</p>
 						<p className="authors">
-							Authors: <span className="namingBook">{bookAuthors}</span>
+						<span className="nameSpace">Authors:</span> <span className="namingBook">{bookAuthors}</span>
 						</p>
 						<p className="description">
-							Description: <span className="namingBook">{bookDescription}</span>
+						<span className="nameSpace">Description:</span> <span className="namingBook">{bookDescription}</span>
 						</p>
 					</div>
 				</>

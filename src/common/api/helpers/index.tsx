@@ -3,7 +3,7 @@ import { localString } from "types";
 import { basicUrl } from "../constant";
 
 export const getBooksApi = (queryParams:localString) => {
-	const response = axios.get(`${basicUrl}?=${queryParams}&maxResults=40`);
+	const response = axios.get(`${basicUrl}?q=${queryParams}&maxResults=40`);
 	return response;
 };
 

@@ -8,6 +8,10 @@ export const ContainerButton = styled.button`
 	border-radius: 10px;
 	border: 1px solid #000;
 	padding: 5px 10px;
+	@media(max-width:560px){
+		padding: 1px 1px;
+		min-height: 30px;
+	}
 	span {
 		font-family: "Edu NSW ACT Foundation", cursive;
 		font-weight: 700;

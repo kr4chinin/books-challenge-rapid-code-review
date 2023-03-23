@@ -24,6 +24,7 @@ export const Container = styled.div`
 		.name {
 			max-width: 300px;
 			width: 100%;
+			
 		}
 		.categories {
 			max-width: 300px;
@@ -32,6 +33,12 @@ export const Container = styled.div`
 		.authors {
 			max-width: 300px;
 			width: 100%;
+		}
+		.nameSpace{
+			font-weight: 900;
+		}
+		.namingBook{
+			font-family: 'Edu NSW ACT Foundation', cursive;
 		}
 	}
 `;

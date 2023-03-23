@@ -22,8 +22,7 @@ const Items: FC<IStateItemsProps> = ({ state, sortingField }): JSX.Element => {
 	const dispatch = useDispatch();
 	const isLoading = useSelector((state: IState) => state.books.loading);
 	const id = useSelector((state: IState) => state.books.id);
-	const error = useSelector((state: IState) => state.books.error);
-console.log('error on page', error)
+
 	const showMoreItems = () => {
 		setVisible((prevValue) => prevValue + 30);
 	};
@@ -86,7 +85,7 @@ console.log('error on page', error)
 						<Button onClick={showMoreItems} buttonName={"Show more"} />
 					) : null}
 				</>
-			) :{error}}
+			) : null}
 		</S.Container>
 	);
 };

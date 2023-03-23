@@ -8,6 +8,7 @@ export const ContainerInput = styled.input`
 	border-radius: 10px;
 	border: none;
 	font-size: 20px;
+	
 	::placeholder {
 		font-size: 20px;
 	}
