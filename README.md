@@ -1,5 +1,5 @@
 #### Live-version available on link: https://shkirenkoroma.github.io/booksChalenge/
-![image](https://user-images.githubusercontent.com/61347452/227291293-b329faaa-0792-433f-a00c-374e4d61ca3f.png)
+![image](https://user-images.githubusercontent.com/61347452/227565619-357daf3b-6053-4b06-a7cf-5063aff95546.png)
 In this project, a search for books by a keyword was implemented through input. Redux was used for state management, redux-saga was used for side effects, redux-toolkit was used to optimize redux work.
 ![image](https://user-images.githubusercontent.com/61347452/227293454-7c993838-a9c1-4a28-9de8-8f1e92ef5ade.png)
 ![image](https://user-images.githubusercontent.com/61347452/227293631-6957dbf6-5123-4208-a432-5c4e0db72944.png)
