@@ -5,6 +5,6 @@ In this project, a search for books by a keyword was implemented through input. 
 ![image](https://user-images.githubusercontent.com/61347452/227565787-f8bb160a-faa0-4f1b-82ed-f6fc2e47075e.png)
 ![image](https://user-images.githubusercontent.com/61347452/227565943-910509c9-aa6d-4e22-848b-c772d8385c0f.png)
 After searching for the necessary literature, you can use sorting by category, also by publication date
-![image](https://user-images.githubusercontent.com/61347452/227566275-a52bd0c1-ea10-4139-bfa0-55c433cd1320.png)
+![image](https://user-images.githubusercontent.com/61347452/227567299-f962e577-1cd7-40bd-aa59-27159b16e604.png)
 By clicking on the selected book, you will be redirected to the page with the book with its full description.
 ![image](https://user-images.githubusercontent.com/61347452/227566356-3b72d90e-e73e-41ea-a6f3-b2b720005caa.png)
