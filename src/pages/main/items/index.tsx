@@ -10,21 +10,18 @@ import { FC } from "react";
 import {
 	IPropertiesMap,
 	IPropsItems,
-	IState,
 	IStateItemsProps,
 	localNumber,
 } from "types";
+import { isLoading, urlBookId } from "redux/selectors";
 
-const Items: FC<IStateItemsProps> = ({
-	state,
-	sortingField
-}): JSX.Element => {
+const Items: FC<IStateItemsProps> = ({ state, sortingField }): JSX.Element => {
 	const [stateArray, setStateArray] = useState<IPropsItems[]>([]);
 	const [filteredArray, setFilteredArray] = useState<IPropsItems[]>([]);
 	const [visible, setVisible] = useState<localNumber>(30);
 	const dispatch = useDispatch();
-	const isLoading = useSelector((state: IState) => state.books.loading);
-	const id = useSelector((state: IState) => state.books.id);
+	const loading = useSelector(isLoading);
+	const id = useSelector(urlBookId);
 
 	const showMoreItems = () => {
 		setVisible((prevValue) => prevValue + 30);
@@ -58,7 +55,7 @@ const Items: FC<IStateItemsProps> = ({
 
 	return (
 		<S.Container>
-			{isLoading ? (
+			{loading ? (
 				<MagnifyingGlass
 					visible={true}
 					height="110"
@@ -72,7 +69,12 @@ const Items: FC<IStateItemsProps> = ({
 			) : !!filteredArray ? (
 				<>
 					{filteredArray.length > 0 ? (
-						<span>Found {filteredArray.length} books</span>
+						<>
+							<span className="counterBooks">
+								Found<span className="counter">{filteredArray.length}</span>
+								<span className="counterBooks">books</span>
+							</span>
+						</>
 					) : null}
 					<div className="container__content">
 						{filteredArray.slice(0, visible).map((element: IPropsItems) => (

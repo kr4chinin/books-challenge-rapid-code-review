@@ -2,17 +2,17 @@ import { kindSortButtons } from "assets/constants";
 import { Button } from "components/button";
 import Input from "components/input";
 import Select from "components/select";
-import Items from "pages/items";
+
 import { FC, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getBooks } from "redux/reducer";
-import { IStateBooksProperties, localString } from "types";
+import { state } from "redux/selectors";
+import { localString } from "types";
 import * as S from "./index.styles";
+import Items from "./items";
 
 const Main: FC = (): JSX.Element => {
-	const state = useSelector(
-		(state: IStateBooksProperties) => state.books.books.data?.items,
-	);
+	const generalState = useSelector(state);
 	const dispatch = useDispatch();
 	const [value, setValue] = useState<localString>("");
 	const [sortingField, setSortingField] = useState<localString>("");
@@ -33,17 +33,18 @@ const Main: FC = (): JSX.Element => {
 					<Button onClick={triggerLoadData} buttonName={"Search"} />
 				</div>
 				<div className="buttonsGroupSorting">
-					{kindSortButtons.map((item, index) => (
+					{kindSortButtons.map(({className, name, id}) => (
 						<Button
-							key={index}
-							onClick={() => triggerSortByKind(item.name)}
-							buttonName={item.name}
+							key={id}
+							className={className}
+							onClick={() => triggerSortByKind(name)}
+							buttonName={name}
 						/>
 					))}
 				</div>
 				<Select value={value} />
 			</div>
-			<Items state={state} sortingField={sortingField}/>
+			<Items state={generalState} sortingField={sortingField}/>
 		</S.ContainerMain>
 	);
 };

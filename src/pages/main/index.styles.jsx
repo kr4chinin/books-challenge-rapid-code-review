@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContainerMain = styled.div`
 	flex-direction: column;
-	background: linear-gradient(#bfbab5, #353238);
+	background: linear-gradient(#b98d60, #474649);
 	max-width: 1200px;
 	width: 100%;
 	min-height: calc(100vh - 100px);

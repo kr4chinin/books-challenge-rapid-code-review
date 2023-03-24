@@ -13,8 +13,7 @@ export const Container = styled.div`
 	border: 1px solid transparent;
 	&:hover {
 		cursor: pointer;
-		background-color: #cdcdcd;
-
+		background-color: #ac9c8c;
 		transition: all 700ms;
 	}
 	img {

@@ -7,6 +7,7 @@ export const Button: FC<IPropsButton> = ({
 	buttonName,
 	className,
 }): JSX.Element => {
+	
 	return (
 		<S.ContainerButton onClick={onClick} className={className}>
 			<span>{buttonName}</span>

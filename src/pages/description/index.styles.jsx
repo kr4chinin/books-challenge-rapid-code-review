@@ -7,7 +7,7 @@ export const Container = styled.div`
 	justify-content: space-around;
 	align-items: center;
 	min-height: 700px;
-	background: linear-gradient(#bfbab5, #353238);
+	background: linear-gradient(#b98d60, #474649);
 	border-radius: 20px;
 	.container__label {
 		margin: 0 40px 0 40px;
