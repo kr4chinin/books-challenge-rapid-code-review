@@ -43,7 +43,7 @@ const Main: FC = (): JSX.Element => {
 				</div>
 				<Select value={value} />
 			</div>
-			<Items state={state} sortingField={sortingField} />
+			<Items state={state} sortingField={sortingField}/>
 		</S.ContainerMain>
 	);
 };

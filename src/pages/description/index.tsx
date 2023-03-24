@@ -1,7 +1,7 @@
 import * as S from "./index.styles";
 import { useSelector } from "react-redux";
 import { Button } from "components/button";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { MagnifyingGlass } from "react-loader-spinner";
 import { ICurrentState, IState } from "types";
 
@@ -23,6 +23,10 @@ const DescriptionPage = () => {
 		(state: ICurrentState) => state.books.book.data?.volumeInfo.description,
 	);
 	const isLoading = useSelector((state: IState) => state.books?.loading);
+	const navigate = useNavigate();
+	const goBack = () => {
+		navigate(-1);
+	};
 
 	return (
 		<S.Container>
@@ -39,15 +43,17 @@ const DescriptionPage = () => {
 				/>
 			) : (
 				<>
-					<Link to="/*">
-						<Button buttonName={"Back"} className={"backbutton"} />
-					</Link>
+					<Button
+						buttonName={"Back"}
+						className={"backbutton"}
+						onClick={goBack}
+					/>
 					<div className="container__label">
 						<img src={bookImage} alt="label of book" />
 					</div>
 					<div className="container__description">
 						<p className="name">
-							<span className="nameSpace">Name:</span>{" "}
+							<span className="nameSpace">Name:</span>
 							<span className="namingBook">{bookName}</span>
 						</p>
 						<p className="categories">
@@ -55,11 +61,11 @@ const DescriptionPage = () => {
 							<span className="namingBook">{bookCategories}</span>
 						</p>
 						<p className="authors">
-							<span className="nameSpace">Authors:</span>{" "}
+							<span className="nameSpace">Authors:</span>
 							<span className="namingBook">{bookAuthors}</span>
 						</p>
 						<p className="description">
-							<span className="nameSpace">Description:</span>{" "}
+							<span className="nameSpace">Description:</span>
 							<span className="namingBook">{bookDescription}</span>
 						</p>
 					</div>
