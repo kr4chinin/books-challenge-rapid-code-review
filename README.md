@@ -1,10 +1,10 @@
-## Important note: in some cases it is necessary to use a VPN due to the fact that the Google API restricts a number of countries for use.
-#### Live-version available on link: https://shkirenkoroma.github.io/booksChalenge/
+## Важное примечание: в некоторых случаях необходимо использовать VPN из-за того, что Google API ограничивает количество стран для использования.
+#### Live-версия доступна по ссылке: https://shkirenkoroma.github.io/booksChalenge/
 ![image](https://user-images.githubusercontent.com/61347452/227565619-357daf3b-6053-4b06-a7cf-5063aff95546.png)
-In this project, a search for books by a keyword was implemented through input. Redux was used for state management, redux-saga was used for side effects, redux-toolkit was used to optimize redux work.
+В этом проекте был реализован поиск книг по ключевому слову через ввод. Redux использовался для управления состоянием, redux-saga — для побочных эффектов, redux-toolkit — для оптимизации работы redux.
 ![image](https://user-images.githubusercontent.com/61347452/227565787-f8bb160a-faa0-4f1b-82ed-f6fc2e47075e.png)
 ![image](https://user-images.githubusercontent.com/61347452/227565943-910509c9-aa6d-4e22-848b-c772d8385c0f.png)
-After searching for the necessary literature, you can use sorting by category, also by publication date
+После поиска нужной литературы можно воспользоваться сортировкой по категориям, также по дате публикации
 ![image](https://user-images.githubusercontent.com/61347452/227567299-f962e577-1cd7-40bd-aa59-27159b16e604.png)
-By clicking on the selected book, you will be redirected to the page with the book with its full description.
+Нажав на выбранную книгу, вы будете перенаправлены на страницу с книгой с ее полным описанием.
 ![image](https://user-images.githubusercontent.com/61347452/227566356-3b72d90e-e73e-41ea-a6f3-b2b720005caa.png)
