@@ -1,8 +1,7 @@
-import * as S from "./index.styles";
-import { useSelector } from "react-redux";
-import { Button } from "components/button";
-import { useNavigate } from "react-router-dom";
-import { MagnifyingGlass } from "react-loader-spinner";
+import { useSelector } from 'react-redux';
+import { Button } from 'components/button';
+import { useNavigate } from 'react-router-dom';
+import { MagnifyingGlass } from 'react-loader-spinner';
 import {
 	bookAuthors,
 	bookCategories,
@@ -10,7 +9,9 @@ import {
 	bookImage,
 	bookName,
 	isLoading,
-} from "redux/selectors";
+} from 'redux/selectors';
+
+import * as S from './index.styles';
 
 const DescriptionPage = () => {
 	const label = useSelector(bookImage);
@@ -20,6 +21,8 @@ const DescriptionPage = () => {
 	const description = useSelector(bookDescription);
 	const loading = useSelector(isLoading);
 	const navigate = useNavigate();
+
+	console.log('label', label);
 
 	const goBack = () => {
 		navigate(-1);
@@ -33,7 +36,7 @@ const DescriptionPage = () => {
 					height="110"
 					width="110"
 					ariaLabel="MagnifyingGlass-loading"
-					wrapperStyle={{ marginTop: "10px" }}
+					wrapperStyle={{ marginTop: '10px' }}
 					wrapperClass="MagnifyingGlass-wrapper"
 					glassColor="#c0efff"
 					color="#bb7d81"
@@ -41,8 +44,8 @@ const DescriptionPage = () => {
 			) : (
 				<>
 					<Button
-						buttonName={"Back"}
-						className={"backbutton"}
+						buttonName={'Back'}
+						className={'backbutton'}
 						onClick={goBack}
 					/>
 					<div className="container__label">

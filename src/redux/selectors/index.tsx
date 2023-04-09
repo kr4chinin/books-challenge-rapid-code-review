@@ -3,7 +3,7 @@ import {
 	IDataBooks,
 	IState,
 	IStateBooksProperties,
-} from "types";
+} from 'types';
 
 export const urlBookId = (state: IDataBooks) => state.books.id;
 

@@ -1,24 +1,34 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { localBoolean, localString } from 'types';
+
+interface IState {
+	books: [];
+	book: {};
+	loading: boolean;
+	error: string;
+	id: number;
+	searchParams: string | number | undefined;
+	queryParams: string;
+}
+
+const initialState: IState = {
+	books: [],
+	book: {},
+	loading: false,
+	error: '',
+	id: 0,
+	searchParams: '',
+	queryParams: '',
+};
 
 const booksSlice = createSlice({
-	name: "books",
-	initialState: {
-		books: [],
-		book: {},
-		loading: false,
-		error: "",
-		id: 0,
-		searchParams: "",
-		queryParams: "",
-	},
+	name: 'books',
+	initialState,
 	reducers: {
-		setLoading: (state) => {
-			state.loading = true;
+		setLoading: (state, action:PayloadAction<localBoolean>) => {
+			state.loading = action.payload;
 		},
-		unSetLoading: (state) => {
-			state.loading = false;
-		},
-		getBooks: (state, action) => {
+		getBooks: (state, action: PayloadAction<string | number | undefined>) => {
 			state.loading = true;
 			state.searchParams = action.payload;
 		},
@@ -28,7 +38,7 @@ const booksSlice = createSlice({
 		setError: (state, action) => {
 			state.error = action.payload;
 		},
-		getSortingBooks: (state, action) => {
+		getSortingBooks: (state, action: PayloadAction<localString>) => {
 			state.loading = false;
 			state.queryParams = action.payload;
 		},
@@ -44,7 +54,6 @@ const booksSlice = createSlice({
 export const booksReducer = booksSlice.reducer;
 export const {
 	setLoading,
-	unSetLoading,
 	getBooks,
 	setBooks,
 	setBook,

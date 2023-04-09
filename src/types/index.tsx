@@ -44,6 +44,7 @@ export interface IPropsButton {
 
 export interface IPropsInput {
 	value?: localString;
+	dispatch: (e: any) => string;
 	setValue: (e: localString) => void;
 }
 export interface IPropsItem {
@@ -69,6 +70,7 @@ export interface IStateItemsProps {
 	sortingField: localString;
 }
 export interface IPropsSelect {
+	dispatch:(e:any) => localString,
 	value?: localString;
 }
 

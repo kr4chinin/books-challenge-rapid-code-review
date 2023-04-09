@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
 	display: flex;
@@ -8,7 +8,7 @@ export const Container = styled.div`
 	gap: 15px;
 	min-height: calc(100vh - 200px);
 	.counterBooks {
-		font-family: "Edu NSW ACT Foundation", cursive;
+		font-family: 'Edu NSW ACT Foundation', cursive;
 	}
 	.counter {
 		font-weight: 900;

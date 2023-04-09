@@ -1,19 +1,18 @@
-import { FC } from "react";
-import { useDispatch } from "react-redux";
-import * as S from "./index.styles";
-import { getBooks } from "redux/reducer";
-import React from "react";
-import { IPropsInput } from "types";
+import { FC } from 'react';
+import { getBooks } from 'redux/reducer';
+import React from 'react';
+import { IPropsInput } from 'types';
 
-const Input: FC<IPropsInput> = ({ value, setValue }): JSX.Element => {
-	const dispatch = useDispatch();
+import * as S from './index.styles';
+
+const Input: FC<IPropsInput> = ({ value, setValue, dispatch }): JSX.Element => {
 
 	const handleValue = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setValue(e.target.value);
 	};
 
 	const handleChange = (e: React.KeyboardEvent): void => {
-		if (e.key === "Enter") {
+		if (e.key === 'Enter') {
 			dispatch(getBooks(value));
 		}
 	};

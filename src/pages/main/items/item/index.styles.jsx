@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
 	max-width: 280px !important;
@@ -23,7 +23,7 @@ export const Container = styled.div`
 	}
 	span {
 		font-size: 12px;
-		font-family: "Monotype Corsiva";
+		font-family: 'Monotype Corsiva';
 		overflow: hidden;
 		white-space: pre-wrap;
 	}

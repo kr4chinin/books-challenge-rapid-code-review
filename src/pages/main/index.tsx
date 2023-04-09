@@ -1,21 +1,22 @@
-import { kindSortButtons } from "assets/constants";
-import { Button } from "components/button";
-import Input from "components/input";
-import Select from "components/select";
+import { kindSortButtons } from 'assets/constants';
+import { Button } from 'components/button';
+import Input from 'components/input';
+import Select from 'components/select';
 
-import { FC, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getBooks } from "redux/reducer";
-import { state } from "redux/selectors";
-import { localString } from "types";
-import * as S from "./index.styles";
-import Items from "./items";
+import { FC, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getBooks } from 'redux/reducer';
+import { state } from 'redux/selectors';
+import { localString } from 'types';
+
+import Items from './items';
+import * as S from './index.styles';
 
 const Main: FC = (): JSX.Element => {
 	const generalState = useSelector(state);
 	const dispatch = useDispatch();
-	const [value, setValue] = useState<localString>("");
-	const [sortingField, setSortingField] = useState<localString>("");
+	const [value, setValue] = useState<localString>('');
+	const [sortingField, setSortingField] = useState<localString>('');
 
 	const triggerLoadData = (): void => {
 		dispatch(getBooks(value));
@@ -29,11 +30,11 @@ const Main: FC = (): JSX.Element => {
 		<S.ContainerMain>
 			<div className="header">
 				<div className="header__mainfield">
-					<Input value={value} setValue={setValue} />
-					<Button onClick={triggerLoadData} buttonName={"Search"} />
+					<Input value={value} setValue={setValue} dispatch={dispatch}/>
+					<Button onClick={triggerLoadData} buttonName={'Search'} />
 				</div>
 				<div className="buttonsGroupSorting">
-					{kindSortButtons.map(({className, name, id}) => (
+					{kindSortButtons.map(({ className, name, id }) => (
 						<Button
 							key={id}
 							className={className}
@@ -42,9 +43,9 @@ const Main: FC = (): JSX.Element => {
 						/>
 					))}
 				</div>
-				<Select value={value} />
+				<Select value={value} dispatch={dispatch}/>
 			</div>
-			<Items state={generalState} sortingField={sortingField}/>
+			<Items state={generalState} sortingField={sortingField} />
 		</S.ContainerMain>
 	);
 };

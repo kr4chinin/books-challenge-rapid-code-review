@@ -1,19 +1,20 @@
-import * as S from "./index.styles";
-import Item from "./item";
-import { useState, useEffect } from "react";
-import { Button } from "components/button";
-import { MagnifyingGlass } from "react-loader-spinner";
-import { useDispatch, useSelector } from "react-redux";
-import { getBooks, getIdBook } from "redux/reducer";
-import { Link } from "react-router-dom";
-import { FC } from "react";
+import { useState, useEffect } from 'react';
+import { Button } from 'components/button';
+import { MagnifyingGlass } from 'react-loader-spinner';
+import { useDispatch, useSelector } from 'react-redux';
+import { getBooks, getIdBook } from 'redux/reducer';
+import { Link } from 'react-router-dom';
+import { FC } from 'react';
 import {
 	IPropertiesMap,
 	IPropsItems,
 	IStateItemsProps,
 	localNumber,
-} from "types";
-import { isLoading, urlBookId } from "redux/selectors";
+} from 'types';
+import { isLoading, urlBookId } from 'redux/selectors';
+
+import Item from './item';
+import * as S from './index.styles';
 
 const Items: FC<IStateItemsProps> = ({ state, sortingField }): JSX.Element => {
 	const [stateArray, setStateArray] = useState<IPropsItems[]>([]);
@@ -29,7 +30,7 @@ const Items: FC<IStateItemsProps> = ({ state, sortingField }): JSX.Element => {
 
 	useEffect(() => {
 		dispatch(getBooks(id));
-	}, []);
+	}, [dispatch, id]);
 
 	useEffect(() => {
 		setStateArray(state);
@@ -37,7 +38,7 @@ const Items: FC<IStateItemsProps> = ({ state, sortingField }): JSX.Element => {
 	}, [state]);
 
 	useEffect(() => {
-		if (sortingField === "All") {
+		if (sortingField === 'All') {
 			setFilteredArray(state);
 		} else setFilteredArray(sortingFunction());
 	}, [sortingField]);
@@ -61,7 +62,7 @@ const Items: FC<IStateItemsProps> = ({ state, sortingField }): JSX.Element => {
 					height="110"
 					width="110"
 					ariaLabel="MagnifyingGlass-loading"
-					wrapperStyle={{ marginTop: "250px" }}
+					wrapperStyle={{ marginTop: '250px' }}
 					wrapperClass="MagnifyingGlass-wrapper"
 					glassColor="#c0efff"
 					color="#bb7d81"
@@ -87,7 +88,7 @@ const Items: FC<IStateItemsProps> = ({ state, sortingField }): JSX.Element => {
 						))}
 					</div>
 					{filteredArray.length > 30 && stateArray.length > visible ? (
-						<Button onClick={showMoreItems} buttonName={"Show more"} />
+						<Button onClick={showMoreItems} buttonName={'Show more'} />
 					) : null}
 				</>
 			) : null}

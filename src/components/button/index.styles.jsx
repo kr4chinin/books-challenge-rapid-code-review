@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ContainerButton = styled.button`
 	max-width: 100px;
@@ -16,7 +16,7 @@ export const ContainerButton = styled.button`
 		min-height: 30px;
 	}
 	span {
-		font-family: "Edu NSW ACT Foundation", cursive;
+		font-family: 'Edu NSW ACT Foundation', cursive;
 		font-weight: 700;
 	}
 	:hover {

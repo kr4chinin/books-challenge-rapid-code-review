@@ -1,20 +1,24 @@
-import { getBooksApi } from "common/api/helpers";
-import { call, put, takeEvery } from "redux-saga/effects";
-import { getBooks, setBooks, setError, setLoading, unSetLoading } from "redux/reducer";
-import { IDataBooks, IPropsAction } from "types";
+import { getBooksApi } from 'common/api/helpers';
+import { call, put, takeEvery } from 'redux-saga/effects';
+import {
+	setBooks,
+	setError,
+	setLoading,
+} from 'redux/reducer';
+import { IDataBooks, IPropsAction } from 'types';
 
 function* sagaGetBooks(action: IPropsAction) {
 	try {
-		yield put(setLoading());
+		yield put(setLoading(true));
 		const dataBooks: IDataBooks = yield call(getBooksApi, action.payload);
 		yield put(setBooks(dataBooks));
-		yield put(unSetLoading());
+		yield put(setLoading(false));
 	} catch {
-		yield put(setError("Произошла ошибка загрузки данных"));
-		yield put(unSetLoading());
+		yield put(setError('Произошла ошибка загрузки данных'));
+		yield put(setLoading(false));
 	}
 }
 
 export function* sagaBooksWatcher() {
-	yield takeEvery(getBooks, sagaGetBooks);
+	yield takeEvery('books/getBooks', sagaGetBooks);
 }

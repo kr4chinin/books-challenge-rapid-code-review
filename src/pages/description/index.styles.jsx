@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
 	display: flex;
@@ -73,7 +73,7 @@ export const Container = styled.div`
 			font-weight: 900;
 		}
 		.namingBook {
-			font-family: "Edu NSW ACT Foundation", cursive;
+			font-family: 'Edu NSW ACT Foundation', cursive;
 		}
 		.description {
 			@media (max-width: 560px) {
