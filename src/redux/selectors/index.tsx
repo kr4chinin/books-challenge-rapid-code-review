@@ -1,28 +1,59 @@
-import {
-	ICurrentState,
-	IDataBooks,
-	IState,
-	IStateBooksProperties,
-} from 'types';
+import { IVolumeInfo } from 'pages/main/items/item';
+import { IDataBook } from 'redux/saga/sagaGetBookByID';
 
-export const urlBookId = (state: IDataBooks) => state.books.id;
+export interface IDataBooks {
+	kind: string;
+	items: IDataBook[];
+}
 
-export const bookImage = (state: ICurrentState) =>
-	state.books.book.data?.volumeInfo.imageLinks.smallThumbnail;
+export interface ICurrentState {
+	books: { book: IDataBook };
+}
 
-export const bookName = (state: ICurrentState) =>
-	state.books.book.data?.volumeInfo.title;
+export interface IStateBooksProperties {
+	books: IStateProperties;
+}
 
-export const bookCategories = (state: ICurrentState) =>
-	state.books.book.data?.volumeInfo.categories;
+export interface IProps {
+	items: IItemProps[];
+}
+export interface IProperties {
+	data: IProps;
+}
 
-export const bookAuthors = (state: ICurrentState) =>
-	state.books.book.data?.volumeInfo.authors;
+export interface IStateProperties {
+	books: IProperties;
+}
 
-export const bookDescription = (state: ICurrentState) =>
-	state.books.book.data?.volumeInfo.description;
+interface IItemProps {
+	kind: string;
+	id: number;
+	etag: string;
+	selfLink: string;
+	volumeInfo: IVolumeInfo;
+}
+
+export interface IState {
+	books: {
+		books: IDataBook[];
+		book: IDataBook;
+		loading: boolean;
+		error: string;
+		id: number;
+		searhcParams: string;
+		queryParams: string;
+	};
+}
+
+export const urlBookId = (state: IState) => state.books.id;
 
 export const isLoading = (state: IState) => state.books?.loading;
 
 export const state = (state: IStateBooksProperties) =>
 	state.books.books.data?.items;
+
+export const bookData = (state: ICurrentState) =>
+	state.books?.book?.data?.volumeInfo ?? [];
+
+export const imageLinks = (state: ICurrentState) =>
+	state.books.book?.data?.volumeInfo?.imageLinks?.smallThumbnail ?? '';

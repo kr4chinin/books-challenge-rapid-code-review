@@ -16,29 +16,30 @@ export const Container = styled.div`
 		background-color: #ac9c8c;
 		transition: all 700ms;
 	}
-	img {
-		width: 120px;
-		height: 160px;
-		margin-bottom: 40px;
-	}
-	span {
-		font-size: 12px;
-		font-family: 'Monotype Corsiva';
-		overflow: hidden;
-		white-space: pre-wrap;
-	}
-	.upperName {
-		font-weight: 700;
-	}
-	.nameOfcompany {
-		overflow: hidden;
-		text-overflow: ellipsis;
-		display: -moz-box;
-		-moz-box-orient: vertical;
-		display: -webkit-box;
-		-webkit-line-clamp: 3;
-		-webkit-box-orient: vertical;
-		line-clamp: 3;
-		box-orient: vertical;
-	}
+`;
+
+export const Image = styled.img`
+	width: 120px;
+	height: 160px;
+	margin-bottom: 40px;
+`;
+
+export const InlineString = styled.span`
+	font-size: 12px;
+	font-family: 'Monotype Corsiva';
+	overflow: hidden;
+	white-space: pre-wrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -moz-box;
+	-moz-box-orient: vertical;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	line-clamp: 3;
+	box-orient: vertical;
+`;
+
+export const InlineStringUpper = styled.span`
+	font-weight: 700;
 `;

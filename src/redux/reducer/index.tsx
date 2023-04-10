@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { localBoolean, localString } from 'types';
 
 interface IState {
 	books: [];
@@ -25,7 +24,7 @@ const booksSlice = createSlice({
 	name: 'books',
 	initialState,
 	reducers: {
-		setLoading: (state, action:PayloadAction<localBoolean>) => {
+		setLoading: (state, action:PayloadAction<boolean>) => {
 			state.loading = action.payload;
 		},
 		getBooks: (state, action: PayloadAction<string | number | undefined>) => {
@@ -38,7 +37,7 @@ const booksSlice = createSlice({
 		setError: (state, action) => {
 			state.error = action.payload;
 		},
-		getSortingBooks: (state, action: PayloadAction<localString>) => {
+		getSortingBooks: (state, action: PayloadAction<string>) => {
 			state.loading = false;
 			state.queryParams = action.payload;
 		},

@@ -1,19 +1,22 @@
 import { FC } from 'react';
 import { getSortingBooks } from 'redux/reducer';
-import { IPropsSelect } from 'types';
 
 import * as S from './index.styles';
 
-const Select: FC<IPropsSelect> = ({ value, dispatch }): JSX.Element => {
+export interface IPropsSelect {
+	dispatch: (e: any) => string;
+	value?: string;
+}
 
-	const handleSortingBy = (e: React.ChangeEvent<HTMLInputElement>): void => {
+const Select: FC<IPropsSelect> = ({ value, dispatch }): JSX.Element => {
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		const queryParams = `${value}&orderBy=${e.target.value}`;
 		dispatch(getSortingBooks(queryParams));
 	};
 
 	return (
 		<S.ContainerSelect
-			onChange={handleSortingBy}
+			onChange={handleChange}
 			name="sortingBy"
 			id="sortingBy"
 		>

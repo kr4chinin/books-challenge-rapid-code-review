@@ -5,21 +5,32 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getBooks, getIdBook } from 'redux/reducer';
 import { Link } from 'react-router-dom';
 import { FC } from 'react';
-import {
-	IPropertiesMap,
-	IPropsItems,
-	IStateItemsProps,
-	localNumber,
-} from 'types';
 import { isLoading, urlBookId } from 'redux/selectors';
 
-import Item from './item';
+import Item, { IVolumeInfo } from './item';
 import * as S from './index.styles';
+
+export interface IPropsItems {
+	kind: string;
+	id: number;
+	etag: string;
+	selfLink: string;
+	volumeInfo: IVolumeInfo;
+}
+
+export interface IStateItemsProps {
+	state: IPropsItems[];
+	sortingField: string;
+}
+
+export interface IPropertiesMap {
+	volumeInfo: IVolumeInfo;
+}
 
 const Items: FC<IStateItemsProps> = ({ state, sortingField }): JSX.Element => {
 	const [stateArray, setStateArray] = useState<IPropsItems[]>([]);
 	const [filteredArray, setFilteredArray] = useState<IPropsItems[]>([]);
-	const [visible, setVisible] = useState<localNumber>(30);
+	const [visible, setVisible] = useState<number>(30);
 	const dispatch = useDispatch();
 	const loading = useSelector(isLoading);
 	const id = useSelector(urlBookId);
@@ -50,7 +61,7 @@ const Items: FC<IStateItemsProps> = ({ state, sortingField }): JSX.Element => {
 			return isHasMatches;
 		});
 	};
-	const handleIdBook = (id: localNumber): void => {
+	const handleIdBook = (id: number): void => {
 		dispatch(getIdBook(id));
 	};
 
@@ -71,24 +82,24 @@ const Items: FC<IStateItemsProps> = ({ state, sortingField }): JSX.Element => {
 				<>
 					{filteredArray.length > 0 ? (
 						<>
-							<span className="counterBooks">
-								Found<span className="counter">{filteredArray.length}</span>
-								<span className="counterBooks">books</span>
-							</span>
+							<S.InlineBooks>
+								Found<S.InlineCounter>{filteredArray.length}</S.InlineCounter>
+								<S.InlineBooks>books</S.InlineBooks>
+							</S.InlineBooks>
 						</>
 					) : null}
-					<div className="container__content">
+					<S.ContainerContent>
 						{filteredArray.slice(0, visible).map((element: IPropsItems) => (
 							<Link to={`${element.id}`} key={element.id}>
 								<Item
 									state={element}
-									onClick={() => handleIdBook(element.id)}
+									handleClick={() => handleIdBook(element.id)}
 								/>
 							</Link>
 						))}
-					</div>
+					</S.ContainerContent>
 					{filteredArray.length > 30 && stateArray.length > visible ? (
-						<Button onClick={showMoreItems} buttonName={'Show more'} />
+						<Button handleClick={showMoreItems} buttonName={'Show more'} />
 					) : null}
 				</>
 			) : null}

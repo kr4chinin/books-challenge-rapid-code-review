@@ -7,29 +7,31 @@ export const Container = styled.div`
 	align-items: center;
 	gap: 15px;
 	min-height: calc(100vh - 200px);
-	.counterBooks {
-		font-family: 'Edu NSW ACT Foundation', cursive;
-	}
-	.counter {
-		font-weight: 900;
-		margin: 0 10px;
-	}
-	.container__content {
+
+	a {
 		text-decoration: none;
 		color: #000;
+		max-width: 200px;
+		width: 100%;
 		display: flex;
-		flex-direction: row;
 		flex-wrap: wrap;
-		justify-content: center;
-		gap: 30px;
-
-		a {
-			text-decoration: none;
-			color: #000;
-			max-width: 200px;
-			width: 100%;
-			display: flex;
-			flex-wrap: wrap;
-		}
 	}
+`;
+
+export const InlineBooks = styled.span`
+	font-family: 'Edu NSW ACT Foundation', cursive;
+`;
+export const InlineCounter = styled.span`
+	font-weight: 900;
+	margin: 0 10px;
+`;
+
+export const ContainerContent = styled.div`
+	text-decoration: none;
+	color: #000;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 30px;
 `;

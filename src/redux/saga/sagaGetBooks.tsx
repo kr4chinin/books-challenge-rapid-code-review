@@ -5,7 +5,8 @@ import {
 	setError,
 	setLoading,
 } from 'redux/reducer';
-import { IDataBooks, IPropsAction } from 'types';
+
+import { IDataBooks, IPropsAction } from './sagaGetBookByID';
 
 function* sagaGetBooks(action: IPropsAction) {
 	try {

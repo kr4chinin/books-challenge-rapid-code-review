@@ -1,34 +1,47 @@
 import { FC } from 'react';
-import { IPropsItem } from 'types';
 
 import * as S from './index.styles';
 
-export const Item: FC<IPropsItem> = ({ state, onClick }): JSX.Element => {
+export interface IVolumeInfo {
+	title: string;
+	authors: string[];
+	description: string;
+	categories: string[];
+	imageLinks: { smallThumbnail: string };
+}
+
+export interface IPropsItem {
+	state: {
+		kind: string;
+		id: number;
+		etag: string;
+		selfLink: string;
+		volumeInfo: IVolumeInfo;
+	};
+	handleClick: () => void;
+}
+
+export const Item: FC<IPropsItem> = ({ state, handleClick }): JSX.Element => {
 	const label = state.volumeInfo.imageLinks?.smallThumbnail;
 	const name = state.volumeInfo.title;
 	const category = state.volumeInfo.categories?.[0];
 	const authors = state.volumeInfo.authors;
 
-console.log('label', label);
-console.log('name', name);
-console.log('category', category);
-console.log('authors', authors);
-
 	return (
-		<S.Container onClick={onClick}>
-			<img src={label} alt="label of book" />
-			<span className="nameOfcompany">
-				<span className="upperName">Наименование:</span>
+		<S.Container onClick={handleClick}>
+			<S.Image src={label} alt="label of book" />
+			<S.InlineString>
+				<S.InlineStringUpper>Наименование:</S.InlineStringUpper>
 				{name?.length ? name : 'Незветсно'}
-			</span>
-			<span className="categoryOfcompany">
-				<span className="upperName">Категория:</span>
+			</S.InlineString>
+			<S.InlineString>
+				<S.InlineStringUpper>Категория:</S.InlineStringUpper>
 				{category?.length ? category : 'Неизвестно'}
-			</span>
-			<span className="authorOfcompany">
-				<span className="upperName">Автор:</span>
+			</S.InlineString>
+			<S.InlineString>
+				<S.InlineStringUpper>Автор:</S.InlineStringUpper>
 				{authors?.length ? authors : 'Неизвестно'}
-			</span>
+			</S.InlineString>
 		</S.Container>
 	);
 };

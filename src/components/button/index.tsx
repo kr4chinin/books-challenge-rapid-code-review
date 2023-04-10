@@ -1,17 +1,22 @@
 import { FC } from 'react';
-import { IPropsButton } from 'types';
 
 import * as S from './index.styles';
 
+interface IPropsButton {
+	buttonName: string;
+	className?: string;
+	handleClick?: () => void;
+}
+
 export const Button: FC<IPropsButton> = ({
-	onClick,
+	handleClick,
 	buttonName,
 	className,
 }): JSX.Element => {
 	
 	return (
-		<S.ContainerButton onClick={onClick} className={className}>
-			<span>{buttonName}</span>
+		<S.ContainerButton onClick={handleClick} className={className}>
+			<S.Inline>{buttonName}</S.Inline>
 		</S.ContainerButton>
 	);
 };

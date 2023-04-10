@@ -2,27 +2,16 @@ import { useSelector } from 'react-redux';
 import { Button } from 'components/button';
 import { useNavigate } from 'react-router-dom';
 import { MagnifyingGlass } from 'react-loader-spinner';
-import {
-	bookAuthors,
-	bookCategories,
-	bookDescription,
-	bookImage,
-	bookName,
-	isLoading,
-} from 'redux/selectors';
+import { isLoading, bookData, imageLinks } from 'redux/selectors';
 
 import * as S from './index.styles';
 
 const DescriptionPage = () => {
-	const label = useSelector(bookImage);
-	const name = useSelector(bookName);
-	const categories = useSelector(bookCategories);
-	const authors = useSelector(bookAuthors);
-	const description = useSelector(bookDescription);
 	const loading = useSelector(isLoading);
+	const { title, categories, authors, description } =
+		useSelector(bookData);
+		const label = useSelector(imageLinks);
 	const navigate = useNavigate();
-
-	console.log('label', label);
 
 	const goBack = () => {
 		navigate(-1);
@@ -46,29 +35,29 @@ const DescriptionPage = () => {
 					<Button
 						buttonName={'Back'}
 						className={'backbutton'}
-						onClick={goBack}
+						handleClick={goBack}
 					/>
-					<div className="container__label">
-						<img src={label} alt="label of book" />
-					</div>
-					<div className="container__description">
-						<p className="name">
-							<span className="nameSpace">Name:</span>
-							<span className="namingBook">{name}</span>
-						</p>
-						<p className="categories">
-							<span className="nameSpace">Categories: </span>
-							<span className="namingBook">{categories}</span>
-						</p>
-						<p className="authors">
-							<span className="nameSpace">Authors:</span>
-							<span className="namingBook">{authors}</span>
-						</p>
-						<p className="description">
-							<span className="nameSpace">Description:</span>
-							<span className="namingBook">{description}</span>
-						</p>
-					</div>
+					<S.ContainerLabel>
+						<S.Image src={label} alt="label of book" />
+					</S.ContainerLabel>
+					<S.ContainerDescription>
+						<S.Page>
+							<S.InlineString>Name:</S.InlineString>
+							<S.InlineString>{title}</S.InlineString>
+						</S.Page>
+						<S.Page>
+							<S.InlineString>Categories: </S.InlineString>
+							<S.InlineString>{categories}</S.InlineString>
+						</S.Page>
+						<S.Page>
+							<S.InlineString>Authors:</S.InlineString>
+							<S.InlineString>{authors}</S.InlineString>
+						</S.Page>
+						<S.Page>
+							<S.InlineString>Description:</S.InlineString>
+							<S.InlineString>{description}</S.InlineString>
+						</S.Page>
+					</S.ContainerDescription>
 				</>
 			)}
 		</S.Container>

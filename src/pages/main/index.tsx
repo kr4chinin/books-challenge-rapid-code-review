@@ -7,7 +7,6 @@ import { FC, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBooks } from 'redux/reducer';
 import { state } from 'redux/selectors';
-import { localString } from 'types';
 
 import Items from './items';
 import * as S from './index.styles';
@@ -15,36 +14,36 @@ import * as S from './index.styles';
 const Main: FC = (): JSX.Element => {
 	const generalState = useSelector(state);
 	const dispatch = useDispatch();
-	const [value, setValue] = useState<localString>('');
-	const [sortingField, setSortingField] = useState<localString>('');
+	const [value, setValue] = useState<string>('');
+	const [sortingField, setSortingField] = useState<string>('');
 
 	const triggerLoadData = (): void => {
 		dispatch(getBooks(value));
 	};
 
-	const triggerSortByKind = (name: localString): void => {
+	const triggerSortByKind = (name: string): void => {
 		setSortingField(name);
 	};
 
 	return (
 		<S.ContainerMain>
-			<div className="header">
-				<div className="header__mainfield">
+			<S.Header>
+				<S.HeaderMain>
 					<Input value={value} setValue={setValue} dispatch={dispatch}/>
-					<Button onClick={triggerLoadData} buttonName={'Search'} />
-				</div>
-				<div className="buttonsGroupSorting">
+					<Button handleClick={triggerLoadData} buttonName={'Search'} />
+				</S.HeaderMain>
+				<S.ButtonGroup>
 					{kindSortButtons.map(({ className, name, id }) => (
 						<Button
 							key={id}
 							className={className}
-							onClick={() => triggerSortByKind(name)}
+							handleClick={() => triggerSortByKind(name)}
 							buttonName={name}
 						/>
 					))}
-				</div>
+				</S.ButtonGroup>
 				<Select value={value} dispatch={dispatch}/>
-			</div>
+			</S.Header>
 			<Items state={generalState} sortingField={sortingField} />
 		</S.ContainerMain>
 	);
