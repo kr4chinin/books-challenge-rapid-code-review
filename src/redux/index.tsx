@@ -6,7 +6,7 @@ import rootSaga from './saga';
 
 const sagaMiddleware = createSagaMiddleware();
 
-export const store = configureStore({
+const store = configureStore({
 	reducer: {
 		books: booksReducer,
 	},
@@ -14,3 +14,6 @@ export const store = configureStore({
 });
 
 sagaMiddleware.run(rootSaga);
+export default store;
+
+

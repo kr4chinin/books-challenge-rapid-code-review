@@ -36,5 +36,5 @@ function* sagaGetBookByID(action: IPropsAction) {
 }
 
 export function* sagaBookByIDWatcher() {
-	yield takeEvery(getIdBook, sagaGetBookByID);
+	yield takeEvery('books/getIdBook', sagaGetBookByID);
 }

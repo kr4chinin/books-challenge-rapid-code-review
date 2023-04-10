@@ -24,27 +24,27 @@ const booksSlice = createSlice({
 	name: 'books',
 	initialState,
 	reducers: {
-		setLoading: (state, action:PayloadAction<boolean>) => {
+		setLoading: (state, action: PayloadAction<boolean>) => {
 			state.loading = action.payload;
 		},
 		getBooks: (state, action: PayloadAction<string | number | undefined>) => {
 			state.loading = true;
 			state.searchParams = action.payload;
 		},
-		setBooks: (state, action) => {
+		setBooks: (state, action: PayloadAction<any>) => {
 			state.books = action.payload;
 		},
-		setError: (state, action) => {
+		setError: (state, action: PayloadAction<string>) => {
 			state.error = action.payload;
 		},
 		getSortingBooks: (state, action: PayloadAction<string>) => {
 			state.loading = false;
 			state.queryParams = action.payload;
 		},
-		getIdBook: (state, action) => {
+		getIdBook: (state, action: PayloadAction<number>) => {
 			state.id = action.payload;
 		},
-		setBook: (state, action) => {
+		setBook: (state, action: PayloadAction<any>) => {
 			state.book = action.payload;
 		},
 	},
