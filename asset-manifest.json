@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/booksChalenge/static/css/main.f4ea810a.css",
-    "main.js": "/booksChalenge/static/js/main.bc05290c.js",
+    "main.js": "/booksChalenge/static/js/main.56a3b9d6.js",
     "static/media/backy.jpg": "/booksChalenge/static/media/backy.a9067bd85951726cc54e.jpg",
     "index.html": "/booksChalenge/index.html",
     "main.f4ea810a.css.map": "/booksChalenge/static/css/main.f4ea810a.css.map",
-    "main.bc05290c.js.map": "/booksChalenge/static/js/main.bc05290c.js.map"
+    "main.56a3b9d6.js.map": "/booksChalenge/static/js/main.56a3b9d6.js.map"
   },
   "entrypoints": [
     "static/css/main.f4ea810a.css",
-    "static/js/main.bc05290c.js"
+    "static/js/main.56a3b9d6.js"
   ]
 }
