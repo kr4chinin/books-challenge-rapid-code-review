@@ -12,7 +12,7 @@
 
 #### Live-версия доступна по ссылке: https://shkirenkoroma.github.io/booksChalenge/
 
-##### Для установки необходимо скачать репозиторий - git clone и установитиь пакет зависемостей - npm install / yarn install
+##### Для установки необходимо скачать репозиторий - в командной строке (git bash) git clone <имя репозитория> и установить пакет зависемостей node_modules - npm install / yarn install
 
 ![image](https://user-images.githubusercontent.com/61347452/227565619-357daf3b-6053-4b06-a7cf-5063aff95546.png)
 В этом проекте был реализован поиск книг по ключевому слову через ввод. Redux использовался для управления состоянием, redux-saga — для побочных эффектов, redux-toolkit — для оптимизации работы redux.
