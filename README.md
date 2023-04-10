@@ -1,5 +1,4 @@
 ## Важное примечание: в некоторых случаях необходимо использовать VPN из-за того, что Google API ограничивает количество стран для использования.
-#### Live-версия доступна по ссылке: https://shkirenkoroma.github.io/booksChalenge/
 
 ### 💻 Технологии:
 
@@ -14,6 +13,8 @@
   <img src="https://github.com/devicons/devicon/blob/master/icons/mongodb/mongodb-original.svg" title="mongodb" alt="mongodb" width="40" height="40"/>&nbsp
   <img src="https://github.com/devicons/devicon/blob/master/icons/c/c-plain.svg" title="C" alt="C" width="40" height="40"/>&nbsp;
 </div>
+
+#### Live-версия доступна по ссылке: https://shkirenkoroma.github.io/booksChalenge/
 
 ![image](https://user-images.githubusercontent.com/61347452/227565619-357daf3b-6053-4b06-a7cf-5063aff95546.png)
 В этом проекте был реализован поиск книг по ключевому слову через ввод. Redux использовался для управления состоянием, redux-saga — для побочных эффектов, redux-toolkit — для оптимизации работы redux.
