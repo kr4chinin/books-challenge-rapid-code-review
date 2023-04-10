@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-	max-width: 280px !important;
-	width: 100% !important;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	height: 350px;
 	justify-content: space-evenly;
+	align-items: center;
+	max-width: 280px !important;
+	width: 100% !important;
+	height: 350px;
 	text-align: center;
 	border-radius: 15px;
 	border: 1px solid transparent;
@@ -25,15 +25,15 @@ export const Image = styled.img`
 `;
 
 export const InlineString = styled.span`
+	display: -webkit-box;
+	display: -moz-box;
+	overflow: hidden;
 	font-size: 12px;
 	font-family: 'Monotype Corsiva';
 	overflow: hidden;
 	white-space: pre-wrap;
-	overflow: hidden;
 	text-overflow: ellipsis;
-	display: -moz-box;
 	-moz-box-orient: vertical;
-	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 	line-clamp: 3;

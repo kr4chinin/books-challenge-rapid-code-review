@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 	display: flex;
+	align-items: center;
+	justify-content: space-around;
 	max-width: 1400px;
 	width: 100%;
-	justify-content: space-around;
-	align-items: center;
 	min-height: 700px;
-	background: linear-gradient(#b98d60, #474649);
 	border-radius: 20px;
+	background: linear-gradient(#b98d60, #474649);
 	@media (max-width: 560px) {
 		max-width: 500px;
 		width: 100%;
