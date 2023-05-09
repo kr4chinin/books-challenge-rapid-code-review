@@ -5,12 +5,12 @@ export const ContainerButton = styled.button`
 	min-height: 50px;
 	margin-left: 10px;
 	padding: 5px 10px;
+	border: 1px solid #434242;
+	border-radius: 10px;
 	background-image: linear-gradient(60deg, #cdcdcd 50%, transparent 30%);
 	background-position: 100%;
 	background-size: 400%;
 	background-color: transparent;
-	border-radius: 10px;
-	border: 1px solid #434242;
 	@media (max-width: 560px) {
 		min-height: 30px;
 		padding: 1px 1px;

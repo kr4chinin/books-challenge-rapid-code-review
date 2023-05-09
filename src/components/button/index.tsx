@@ -1,5 +1,4 @@
 import { FC } from 'react';
-
 import * as S from './index.styles';
 
 interface IPropsButton {

@@ -1,12 +1,10 @@
-import { useState, useEffect } from 'react';
-import { Button } from 'components/button';
-import { MagnifyingGlass } from 'react-loader-spinner';
+import { FC, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getBooks, getIdBook } from 'redux/reducer';
 import { Link } from 'react-router-dom';
-import { FC } from 'react';
+import { MagnifyingGlass } from 'react-loader-spinner';
+import { getBooks, getIdBook } from 'redux/reducer';
 import { isLoading, urlBookId } from 'redux/selectors';
-
+import { Button } from 'components/button';
 import Item, { IVolumeInfo } from './item';
 import * as S from './index.styles';
 

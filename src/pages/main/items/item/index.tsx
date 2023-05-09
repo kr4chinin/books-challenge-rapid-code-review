@@ -1,5 +1,4 @@
 import { FC } from 'react';
-
 import * as S from './index.styles';
 
 export interface IVolumeInfo {
@@ -20,8 +19,6 @@ export interface IPropsItem {
 	};
 	handleClick: () => void;
 }
-
-
 
 export const Item: FC<IPropsItem> = ({ state, handleClick }): JSX.Element => {
 	const label = state.volumeInfo.imageLinks?.smallThumbnail;

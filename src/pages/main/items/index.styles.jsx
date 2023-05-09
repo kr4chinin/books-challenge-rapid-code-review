@@ -5,13 +5,13 @@ export const Container = styled.div`
 	flex-direction: column;
 	align-items: center;
 	flex-wrap: wrap;
-	min-height: calc(100vh - 200px);
 	gap: 15px;
+	min-height: calc(100vh - 200px);
 	a {
 		display: flex;
 		flex-wrap: wrap;
-		max-width: 200px;
 		width: 100%;
+		max-width: 200px;
 		text-decoration: none;
 		color: #000;
 	}
@@ -21,15 +21,15 @@ export const InlineBooks = styled.span`
 	font-family: 'Edu NSW ACT Foundation', cursive;
 `;
 export const InlineCounter = styled.span`
-	font-weight: 900;
 	margin: 0 10px;
+	font-weight: 900;
 `;
 
 export const ContainerContent = styled.div`
 	display: flex;
-	flex-wrap: wrap;
 	flex-direction: row;
 	justify-content: center;
+	flex-wrap: wrap;
 	gap: 30px;
 	text-decoration: none;
 	color: #000;

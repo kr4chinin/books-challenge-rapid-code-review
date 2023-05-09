@@ -1,10 +1,10 @@
-import { getBooksApi } from 'common/api/helpers';
 import { call, put, takeEvery } from 'redux-saga/effects';
 import {
-	setBooks,
+  setBooks,
 	setError,
 	setLoading,
 } from 'redux/reducer';
+import { getBooksApi } from 'common/api/helpers';
 
 import { IDataBooks, IPropsAction } from './sagaGetBookByID';
 

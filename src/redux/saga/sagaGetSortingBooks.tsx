@@ -1,11 +1,11 @@
-import { getSortingBooksApi } from 'common/api/helpers';
 import { call, put, takeEvery } from 'redux-saga/effects';
 import {
-	getSortingBooks,
+  getSortingBooks,
 	setBooks,
 	setError,
 	setLoading,
 } from 'redux/reducer';
+import { getSortingBooksApi } from 'common/api/helpers';
 
 import { IDataBooks, IPropsAction } from './sagaGetBookByID';
 

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const ContainerMain = styled.div`
 	display: flex;
 	flex-direction: column;
-	max-width: 1200px;
 	width: 100%;
+	max-width: 1200px;
 	min-height: calc(100vh - 100px);
 	border-radius: 10px;
 	background: linear-gradient(#b98d60, #474649);
@@ -25,15 +25,15 @@ export const Header = styled.div`
 
 export const HeaderMain = styled.div`
 	display: flex;
-	max-width: 600px;
 	width: 100%;
+	max-width: 600px;
 `;
 
 export const ButtonGroup = styled.div`
 	display: flex;
 	justify-content: space-between;
-	max-width: 605px;
 	width: 100%;
+	max-width: 605px;
 	margin-top: 40px;
 	@media (max-width: 560px) {
 		display: grid;

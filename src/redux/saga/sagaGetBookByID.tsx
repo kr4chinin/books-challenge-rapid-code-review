@@ -1,7 +1,7 @@
+import { call, put, takeEvery } from 'redux-saga/effects';
+import { setBook, setError, setLoading } from 'redux/reducer';
 import { getBookByIDApi } from 'common/api/helpers';
 import { IVolumeInfo } from 'pages/main/items/item';
-import { call, put, takeEvery } from 'redux-saga/effects';
-import { getIdBook, setBook, setError, setLoading } from 'redux/reducer';
 
 export interface IPropsAction {
 	action?: string;
