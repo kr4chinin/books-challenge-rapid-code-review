@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ContainerButton = styled.button`
+export const Button = styled.button`
 	max-width: 100px;
 	min-height: 50px;
 	margin-left: 10px;
@@ -11,10 +11,12 @@ export const ContainerButton = styled.button`
 	background-position: 100%;
 	background-size: 400%;
 	background-color: transparent;
+  
 	@media (max-width: 560px) {
 		min-height: 30px;
 		padding: 1px 1px;
 	}
+  
 	:hover {
 		cursor: pointer;
 		border: 1px solid transparent;
@@ -23,7 +25,7 @@ export const ContainerButton = styled.button`
 	}
 `;
 
-export const Inline = styled.span`
+export const ButtonName = styled.span`
 	font-family: 'Edu NSW ACT Foundation', cursive;
 	font-weight: 700;
 `;

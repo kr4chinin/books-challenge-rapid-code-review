@@ -33,13 +33,13 @@ const Main: FC = (): JSX.Element => {
     }
   };
 
-  const handleChangeSelect = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleChangeSelect = (e: ChangeEvent<HTMLInputElement>): void => {
     const queryParams = `${value}&orderBy=${e.target.value}`;
     dispatch(getSortingBooks(queryParams));
   };
 
   return (
-    <S.ContainerMain>
+    <S.Main>
       <S.Header>
         <S.HeaderMain>
           <Input handleChange={handleChange} handleKeyPress={handleKeyPress} />
@@ -58,7 +58,7 @@ const Main: FC = (): JSX.Element => {
         <Select handleChange={handleChangeSelect} />
       </S.Header>
       <Items state={generalState} sortingField={sortingField} />
-    </S.ContainerMain>
+    </S.Main>
   );
 };
 

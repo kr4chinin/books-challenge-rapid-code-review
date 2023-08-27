@@ -8,10 +8,10 @@ export interface IPropsSelect {
 const Select: FC<IPropsSelect> = ({ handleChange }): JSX.Element => {
   
   return (
-    <S.ContainerSelect onChange={handleChange} name="sortingBy" id="sortingBy">
+    <S.Select onChange={handleChange} name="sortingBy" id="sortingBy">
       <option value="relevance">relevance</option>
       <option value="newest">newest</option>
-    </S.ContainerSelect>
+    </S.Select>
   );
 };
 

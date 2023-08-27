@@ -12,7 +12,7 @@ const Input: FC<IPropsInput> = ({
 }): JSX.Element => {
   
   return (
-    <S.ContainerInput
+    <S.Input
       type="text"
       placeholder="Введите название книги"
       onChange={handleChange}

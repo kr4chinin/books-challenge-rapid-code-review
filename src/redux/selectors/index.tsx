@@ -36,7 +36,7 @@ interface IItemProps {
 export interface IState {
 	books: {
 		books: IDataBook[];
-		book: IDataBook;
+		book: IDataBook; 
 		loading: boolean;
 		error: string;
 		id: number;

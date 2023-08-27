@@ -14,8 +14,8 @@ export const Button: FC<IPropsButton> = ({
 }): JSX.Element => {
 	
 	return (
-		<S.ContainerButton onClick={handleClick} className={className}>
-			<S.Inline>{buttonName}</S.Inline>
-		</S.ContainerButton>
+		<S.Button onClick={handleClick} className={className}>
+			<S.ButtonName>{buttonName}</S.ButtonName>
+		</S.Button>
 	);
 };

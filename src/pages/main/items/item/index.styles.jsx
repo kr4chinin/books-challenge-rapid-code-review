@@ -24,7 +24,7 @@ export const Image = styled.img`
 	margin-bottom: 40px;
 `;
 
-export const InlineString = styled.span`
+export const Text = styled.span`
 	display: -webkit-box;
 	display: -moz-box;
 	font-size: 12px;
@@ -39,6 +39,6 @@ export const InlineString = styled.span`
 	overflow: hidden;
 `;
 
-export const InlineStringUpper = styled.span`
+export const TextUpperCase = styled.span`
 	font-weight: 700;
 `;

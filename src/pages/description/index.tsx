@@ -35,27 +35,27 @@ const DescriptionPage = () => {
             className={'backbutton'}
             handleClick={goBack}
           />
-          <S.ContainerLabel>
+          <S.Label>
             <S.Image src={label} alt="label of book" />
-          </S.ContainerLabel>
-          <S.ContainerDescription>
+          </S.Label>
+          <S.Description>
             <S.Page>
-              <S.InlineString>Name:</S.InlineString>
-              <S.InlineString>{title}</S.InlineString>
+              <S.Text>Name:</S.Text>
+              <S.Text>{title}</S.Text>
             </S.Page>
             <S.Page>
-              <S.InlineString>Categories: </S.InlineString>
-              <S.InlineString>{categories}</S.InlineString>
+              <S.Text>Categories: </S.Text>
+              <S.Text>{categories}</S.Text>
             </S.Page>
             <S.Page>
-              <S.InlineString>Authors:</S.InlineString>
-              <S.InlineString>{authors}</S.InlineString>
+              <S.Text>Authors:</S.Text>
+              <S.Text>{authors}</S.Text>
             </S.Page>
             <S.Page>
-              <S.InlineString>Description:</S.InlineString>
-              <S.InlineString>{description}</S.InlineString>
+              <S.Text>Description:</S.Text>
+              <S.Text>{description}</S.Text>
             </S.Page>
-          </S.ContainerDescription>
+          </S.Description>
         </>
       )}
     </S.Container>

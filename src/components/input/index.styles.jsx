@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ContainerInput = styled.input`
+export const Input = styled.input`
 	width: 100%;
 	max-width: 600px;
 	min-height: 50px;
@@ -8,6 +8,7 @@ export const ContainerInput = styled.input`
 	border-radius: 10px;
 	font-size: 20px;
 	outline: none;
+
 	::placeholder {
 		font-size: 20px;
 	}

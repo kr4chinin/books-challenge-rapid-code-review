@@ -17,15 +17,15 @@ export const Container = styled.div`
 	}
 `;
 
-export const InlineBooks = styled.span`
+export const Text = styled.span`
 	font-family: 'Edu NSW ACT Foundation', cursive;
 `;
-export const InlineCounter = styled.span`
+export const Counter = styled.span`
 	margin: 0 10px;
 	font-weight: 900;
 `;
 
-export const ContainerContent = styled.div`
+export const Content = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: center;

@@ -6,7 +6,7 @@ interface IState {
 	loading: boolean;
 	error: string;
 	id: number;
-	searchParams: string | number | undefined;
+	searchParams: any;
 	queryParams: string;
 }
 
@@ -27,7 +27,7 @@ const booksSlice = createSlice({
 		setLoading: (state, action: PayloadAction<boolean>) => {
 			state.loading = action.payload;
 		},
-		getBooks: (state, action: PayloadAction<string | number | undefined>) => {
+		getBooks: (state, action: PayloadAction<any>) => {
 			state.loading = true;
 			state.searchParams = action.payload;
 		},

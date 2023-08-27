@@ -80,13 +80,13 @@ const Items: FC<IStateItemsProps> = ({ state, sortingField }): JSX.Element => {
 				<>
 					{filteredArray.length > 0 ? (
 						<>
-							<S.InlineBooks>
-								Found<S.InlineCounter>{filteredArray.length}</S.InlineCounter>
-								<S.InlineBooks>books</S.InlineBooks>
-							</S.InlineBooks>
+							<S.Text>
+								Found<S.Counter>{filteredArray.length}</S.Counter>
+								<S.Text>books</S.Text>
+							</S.Text>
 						</>
 					) : null}
-					<S.ContainerContent>
+					<S.Content>
 						{filteredArray.slice(0, visible).map((element: IPropsItems) => (
 							<Link to={`${element.id}`} key={element.id}>
 								<Item
@@ -95,7 +95,7 @@ const Items: FC<IStateItemsProps> = ({ state, sortingField }): JSX.Element => {
 								/>
 							</Link>
 						))}
-					</S.ContainerContent>
+					</S.Content>
 					{filteredArray.length > 30 && stateArray.length > visible ? (
 						<Button handleClick={showMoreItems} buttonName={'Show more'} />
 					) : null}

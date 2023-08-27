@@ -29,18 +29,18 @@ export const Item: FC<IPropsItem> = ({ state, handleClick }): JSX.Element => {
 	return (
 		<S.Container onClick={handleClick}>
 			<S.Image src={label} alt="label of book" />
-			<S.InlineString>
-				<S.InlineStringUpper>Наименование:</S.InlineStringUpper>
+			<S.Text>
+				<S.TextUpperCase>Наименование:</S.TextUpperCase>
 				{name?.length ? name : 'Незветсно'}
-			</S.InlineString>
-			<S.InlineString>
-				<S.InlineStringUpper>Категория:</S.InlineStringUpper>
+			</S.Text>
+			<S.Text>
+				<S.TextUpperCase>Категория:</S.TextUpperCase>
 				{category?.length ? category : 'Неизвестно'}
-			</S.InlineString>
-			<S.InlineString>
-				<S.InlineStringUpper>Автор:</S.InlineStringUpper>
+			</S.Text>
+			<S.Text>
+				<S.TextUpperCase>Автор:</S.TextUpperCase>
 				{authors?.length ? authors : 'Неизвестно'}
-			</S.InlineString>
+			</S.Text>
 		</S.Container>
 	);
 };

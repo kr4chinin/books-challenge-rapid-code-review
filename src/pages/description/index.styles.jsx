@@ -16,7 +16,7 @@ export const Container = styled.div`
 	}
 `;
 
-export const ContainerLabel = styled.div`
+export const Label = styled.div`
 	margin: 0 40px 0 40px;
 `;
 
@@ -31,7 +31,7 @@ export const Image = styled.img`
 	}
 `;
 
-export const ContainerDescription = styled.div`
+export const Description = styled.div`
 	width: 100%;
 	max-width: 700px;
 	@media (max-width: 560px) {
@@ -50,7 +50,7 @@ export const Page = styled.p`
 	}
 `;
 
-export const InlineString = styled.span`
+export const Text = styled.span`
 	font-family: 'Edu NSW ACT Foundation', cursive;
 	font-weight: 900;
 `;
