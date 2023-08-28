@@ -16,6 +16,7 @@ const Main: FC = (): JSX.Element => {
   const [value, setValue] = useState<string>('');
   const [sortingField, setSortingField] = useState<string>('');
 
+
   const triggerLoadData = (): void => {
     dispatch(getBooks(value));
   };

@@ -1,7 +1,7 @@
 @import './variables.css';
 
 body {
-  background: url('./assets/img/backy.jpg');
+  background: url('../assets/img/backy.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;

@@ -40,7 +40,7 @@ export interface IState {
     loading: boolean;
     error: string;
     id: number;
-    searhcParams: string;
+    searchParams: string;
     queryParams: string;
   };
 }
@@ -49,7 +49,7 @@ export const urlBookId = (state: IState) => state.books.id;
 
 export const isLoading = (state: IState) => state.books?.loading;
 
-export const state = (state: IStateBooksProperties) => state.books.books.data?.items;
+export const state = (state: IStateBooksProperties) => state.books.books.data?.items ?? [];
 
 export const bookData = (state: ICurrentState) => state.books?.book?.data?.volumeInfo ?? [];
 
