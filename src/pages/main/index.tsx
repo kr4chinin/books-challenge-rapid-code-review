@@ -43,7 +43,11 @@ const Main: FC = (): JSX.Element => {
     <S.Main>
       <S.Header>
         <S.HeaderMain>
-          <Input placeholder="Введите название книги" onChange={handleChange} onKeyDown={handleKeyPress} />
+          <Input
+            placeholder="Введите название книги"
+            onChange={handleChange}
+            onKeyDown={handleKeyPress}
+          />
           <Button onClick={triggerLoadData} buttonName={'Search'} />
         </S.HeaderMain>
         <S.ButtonGroup>

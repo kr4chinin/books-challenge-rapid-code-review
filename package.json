@@ -33,7 +33,8 @@
     "lint": "eslint -c .eslintrc --ext .js,.jsx,.tsx,.ts .",
     "lint:fix": "npm run lint -- --fix",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "prettier:write": "prettier --write ."
   },
   "browserslist": {
     "production": [
@@ -49,6 +50,7 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "prettier": "^3.0.2"
   }
 }

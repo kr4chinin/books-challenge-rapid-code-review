@@ -4,9 +4,5 @@ import { sagaBooksWatcher } from './sagaGetBooks';
 import { sagaSortingBooksWatcher } from './sagaGetSortingBooks';
 
 export default function* rootSaga() {
-	yield all([
-		sagaBooksWatcher(),
-		sagaSortingBooksWatcher(),
-		sagaBookByIDWatcher(),
-	]);
+  yield all([sagaBooksWatcher(), sagaSortingBooksWatcher(), sagaBookByIDWatcher()]);
 }
