@@ -1,20 +1,18 @@
-import { FC } from 'react';
+import { FC, HTMLAttributes } from 'react';
 import * as S from './index.styles';
 
-interface IPropsButton {
+interface IPropsButton extends HTMLAttributes<HTMLButtonElement> {
 	buttonName: string;
 	className?: string;
-	handleClick?: () => void;
 }
 
 export const Button: FC<IPropsButton> = ({
-	handleClick,
 	buttonName,
 	className,
+	...rest
 }): JSX.Element => {
-	
 	return (
-		<S.Button onClick={handleClick} className={className}>
+		<S.Button type="button" {...rest} className={className}>
 			<S.ButtonName>{buttonName}</S.ButtonName>
 		</S.Button>
 	);

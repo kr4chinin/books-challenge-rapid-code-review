@@ -47,18 +47,19 @@ const Items: FC<IStateItemsProps> = ({ state, sortingField }): JSX.Element => {
 	}, [state]);
 
 	useEffect(() => {
+		const sortingFunction = () => {
+			return stateArray.filter((element: IPropertiesMap) => {
+				const sortingElement = element.volumeInfo.categories?.[0];
+				const isHasMatches = sortingElement?.includes(sortingField);
+				return isHasMatches;
+			});
+		};
+
 		if (sortingField === 'All') {
 			setFilteredArray(state);
 		} else setFilteredArray(sortingFunction());
-	}, [sortingField]);
+	}, [sortingField, stateArray, state]);
 
-	const sortingFunction = () => {
-		return stateArray.filter((element: IPropertiesMap) => {
-			const sortingElement = element.volumeInfo.categories?.[0];
-			const isHasMatches = sortingElement?.includes(sortingField);
-			return isHasMatches;
-		});
-	};
 	const handleIdBook = (id: number): void => {
 		dispatch(getIdBook(id));
 	};
@@ -81,23 +82,32 @@ const Items: FC<IStateItemsProps> = ({ state, sortingField }): JSX.Element => {
 					{filteredArray.length > 0 ? (
 						<>
 							<S.Text>
-								Found<S.Counter>{filteredArray.length}</S.Counter>
+								Found
+								<S.Counter>{filteredArray.length}</S.Counter>
 								<S.Text>books</S.Text>
 							</S.Text>
 						</>
 					) : null}
 					<S.Content>
-						{filteredArray.slice(0, visible).map((element: IPropsItems) => (
-							<Link to={`${element.id}`} key={element.id}>
-								<Item
-									state={element}
-									handleClick={() => handleIdBook(element.id)}
-								/>
-							</Link>
-						))}
+						{filteredArray
+							.slice(0, visible)
+							.map((element: IPropsItems) => (
+								<Link to={`${element.id}`} key={element.id}>
+									<Item
+										state={element}
+										handleClick={() =>
+											handleIdBook(element.id)
+										}
+									/>
+								</Link>
+							))}
 					</S.Content>
-					{filteredArray.length > 30 && stateArray.length > visible ? (
-						<Button handleClick={showMoreItems} buttonName={'Show more'} />
+					{filteredArray.length > 30 &&
+					stateArray.length > visible ? (
+						<Button
+							onClick={showMoreItems}
+							buttonName={'Show more'}
+						/>
 					) : null}
 				</>
 			) : null}

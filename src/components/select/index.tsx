@@ -1,18 +1,15 @@
-import { ChangeEvent, FC } from 'react';
+import { FC, HTMLAttributes } from 'react';
 import * as S from './index.styles';
 
-export interface IPropsSelect {
-  handleChange: (e: ChangeEvent<HTMLInputElement>) => void
-}
-
-const Select: FC<IPropsSelect> = ({ handleChange }): JSX.Element => {
-  
-  return (
-    <S.Select onChange={handleChange} name="sortingBy" id="sortingBy">
-      <option value="relevance">relevance</option>
-      <option value="newest">newest</option>
-    </S.Select>
-  );
+const Select: FC<HTMLAttributes<HTMLSelectElement>> = ({
+	...rest
+}): JSX.Element => {
+	return (
+		<S.Select name="sortingBy" id="sortingBy" {...rest}>
+			<option value="relevance">relevance</option>
+			<option value="newest">newest</option>
+		</S.Select>
+	);
 };
 
 export default Select;

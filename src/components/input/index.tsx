@@ -1,24 +1,10 @@
-import { ChangeEvent, FC } from 'react';
+import { FC, HTMLAttributes } from 'react';
 import * as S from './index.styles';
 
-interface IPropsInput {
-  handleChange: (e: ChangeEvent<HTMLInputElement>) => void
-  handleKeyPress: (e: KeyboardEvent) => void
-}
-
-const Input: FC<IPropsInput> = ({
-  handleChange,
-  handleKeyPress,
+const Input: FC<HTMLAttributes<HTMLInputElement>> = ({
+	...rest
 }): JSX.Element => {
-  
-  return (
-    <S.Input
-      type="text"
-      placeholder="Введите название книги"
-      onChange={handleChange}
-      onKeyPress={handleKeyPress}
-    />
-  );
+	return <S.Input type="text" {...rest} />;
 };
 
 export default Input;

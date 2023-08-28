@@ -9,6 +9,7 @@ export const Container = styled.div`
 	min-height: 700px;
 	border-radius: 20px;
 	background: linear-gradient(#b98d60, #474649);
+
 	@media (max-width: 560px) {
 		width: 100%;
 		max-width: 500px;

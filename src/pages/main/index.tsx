@@ -4,6 +4,7 @@ import { getBooks, getSortingBooks } from 'redux/reducer';
 import { state } from 'redux/selectors';
 import { Button } from 'components/button';
 import Input from 'components/input';
+import { KeyboardEvent } from 'react';
 import Select from 'components/select';
 import { kindSortButtons } from 'assets/constants';
 import Items from './items';
@@ -27,13 +28,13 @@ const Main: FC = (): JSX.Element => {
     setValue(e.target.value);
   };
 
-  const handleKeyPress = (e: KeyboardEvent): void => {
+  const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === 'Enter') {
       dispatch(getBooks(value));
     }
   };
 
-  const handleChangeSelect = (e: ChangeEvent<HTMLInputElement>): void => {
+  const handleChangeSelect = (e: ChangeEvent<HTMLSelectElement>): void => {
     const queryParams = `${value}&orderBy=${e.target.value}`;
     dispatch(getSortingBooks(queryParams));
   };
@@ -42,20 +43,20 @@ const Main: FC = (): JSX.Element => {
     <S.Main>
       <S.Header>
         <S.HeaderMain>
-          <Input handleChange={handleChange} handleKeyPress={handleKeyPress} />
-          <Button handleClick={triggerLoadData} buttonName={'Search'} />
+          <Input placeholder="Введите название книги" onChange={handleChange} onKeyDown={handleKeyPress} />
+          <Button onClick={triggerLoadData} buttonName={'Search'} />
         </S.HeaderMain>
         <S.ButtonGroup>
           {kindSortButtons.map(({ className, name, id }) => (
             <Button
               key={id}
               className={className}
-              handleClick={() => triggerSortByKind(name)}
+              onClick={() => triggerSortByKind(name)}
               buttonName={name}
             />
           ))}
         </S.ButtonGroup>
-        <Select handleChange={handleChangeSelect} />
+        <Select onChange={handleChangeSelect} />
       </S.Header>
       <Items state={generalState} sortingField={sortingField} />
     </S.Main>
