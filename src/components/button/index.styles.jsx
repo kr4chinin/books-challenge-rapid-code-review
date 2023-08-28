@@ -26,6 +26,6 @@ export const Button = styled.button`
 `;
 
 export const ButtonName = styled.span`
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: var(--system-font-family);
   font-weight: 700;
 `;

@@ -13,12 +13,12 @@ export const Container = styled.div`
     width: 100%;
     max-width: 200px;
     text-decoration: none;
-    color: #000;
+    color: var(--black);
   }
 `;
 
 export const Text = styled.span`
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: var(--system-font-family);
 `;
 export const Counter = styled.span`
   margin: 0 10px;
@@ -32,5 +32,5 @@ export const Content = styled.div`
   flex-wrap: wrap;
   gap: 30px;
   text-decoration: none;
-  color: #000;
+  color: var(--black);
 `;

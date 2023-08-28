@@ -52,6 +52,6 @@ export const Page = styled.p`
 `;
 
 export const Text = styled.span`
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: var(--system-font-family);
   font-weight: 900;
 `;
